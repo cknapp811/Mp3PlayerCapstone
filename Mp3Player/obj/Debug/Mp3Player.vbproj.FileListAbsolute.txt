@@ -1,0 +1,15 @@
+H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\bin\Debug\Mp3Player.exe.config
+H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\bin\Debug\Mp3Player.exe
+H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\bin\Debug\Mp3Player.pdb
+H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\bin\Debug\Mp3Player.xml
+H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\bin\Debug\Interop.WMPLib.dll
+H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\bin\Debug\AxInterop.WMPLib.dll
+H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\obj\Debug\Interop.WMPLib.dll
+H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\obj\Debug\AxInterop.WMPLib.dll
+H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\obj\Debug\Mp3Player.vbproj.ResolveComReference.cache
+H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\obj\Debug\Mp3Player.Form1.resources
+H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\obj\Debug\Mp3Player.Resources.resources
+H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\obj\Debug\Mp3Player.vbproj.GenerateResource.Cache
+H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\obj\Debug\Mp3Player.exe
+H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\obj\Debug\Mp3Player.xml
+H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\obj\Debug\Mp3Player.pdb
