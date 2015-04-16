@@ -13,3 +13,10 @@ H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\obj\Debu
 H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\obj\Debug\Mp3Player.exe
 H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\obj\Debug\Mp3Player.xml
 H:\IT-SDClasses\FourthSemester\Capstone\Mp3PlayerVB\Mp3Player\Mp3Player\obj\Debug\Mp3Player.pdb
+C:\Users\Cody\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\bin\Debug\Mp3Player.exe.config
+C:\Users\Cody\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Interop.WMPLib.dll
+C:\Users\Cody\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Cody\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.vbproj.ResolveComReference.cache
+C:\Users\Cody\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.exe
+C:\Users\Cody\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.xml
+C:\Users\Cody\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.pdb
