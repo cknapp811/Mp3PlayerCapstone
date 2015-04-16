@@ -1,7 +1,10 @@
 ﻿Imports WMPLib
+Imports System.IO
+
 Public Class Form1
     Dim paths As String()
     Dim fileNames As String()
+    Dim fileDir
 
     Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
         If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
@@ -9,7 +12,7 @@ Public Class Form1
             paths = OpenFileDialog1.SafeFileNames
             fileNames = OpenFileDialog1.FileNames
             For i As Integer = 0 To fileNames.Length - 1
-                ListBox1.Items.Add(fileNames(i))
+                ListBox1.Items.Add(fileNames(i) + "|" + Path.GetFileName(fileNames(i)))
             Next
         End If
 
@@ -17,19 +20,21 @@ Public Class Form1
 
     Private Sub PlayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlayToolStripMenuItem.Click
         AxWindowsMediaPlayer1.Ctlcontrols.play()
-        AxWindowsMediaPlayer1.URL = ListBox1.SelectedItem
-
+        AxWindowsMediaPlayer1.URL = ListBox1.SelectedItem.split("|")(0)
+        SeekBar.Value = 0
+        SeekTimer.Start()
     End Sub
 
     Private Sub PauseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PauseToolStripMenuItem.Click
         AxWindowsMediaPlayer1.Ctlcontrols.pause()
+        SeekTimer.Stop()
     End Sub
 
-    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+    Private Sub PrevToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrevToolStripMenuItem.Click
         AxWindowsMediaPlayer1.Ctlcontrols.previous()
     End Sub
 
-    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+    Private Sub NextToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NextToolStripMenuItem.Click
         AxWindowsMediaPlayer1.Ctlcontrols.next()
     End Sub
 
@@ -37,8 +42,16 @@ Public Class Form1
         AxWindowsMediaPlayer1.URL = paths(ListBox1.SelectedIndex)
 
     End Sub
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    Private Sub SeekTimer_Tick(ByVal sender As System.Object, ByVal e As EventArgs) Handles SeekTimer.Tick
+        If SeekBar.Value < 100 Then
+            SeekBar.Value = SeekBar.Value + 1
+        Else : SeekBar.Value = 0
+        End If
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SeekBar.Value = 0
     End Sub
 
 End Class
