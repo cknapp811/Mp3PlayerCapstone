@@ -35,3 +35,11 @@ C:\Users\Aaron\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\bin\Debug\AxInterop.
 C:\Users\Aaron\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.Form1.resources
 C:\Users\Aaron\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.Resources.resources
 C:\Users\Aaron\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.vbproj.GenerateResource.Cache
+C:\Users\Cody\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\bin\Debug\Mp3Player.exe
+C:\Users\Cody\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\bin\Debug\Mp3Player.pdb
+C:\Users\Cody\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\bin\Debug\Mp3Player.xml
+C:\Users\Cody\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\bin\Debug\Interop.WMPLib.dll
+C:\Users\Cody\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Cody\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.Form1.resources
+C:\Users\Cody\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.Resources.resources
+C:\Users\Cody\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.vbproj.GenerateResource.Cache

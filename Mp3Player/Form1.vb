@@ -6,13 +6,15 @@ Public Class Form1
     Dim fileNames As String()
     Dim fileDir
 
-    Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
+    Public Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
         If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
             OpenFileDialog1.Filter = "MP3 files (*.mp3)|*.mp3|WMA files(*wma)|*wma|All files(*.*)|*.*"
             paths = OpenFileDialog1.SafeFileNames
             fileNames = OpenFileDialog1.FileNames
             For i As Integer = 0 To fileNames.Length - 1
-                ListBox1.Items.Add(fileNames(i) + "|" + Path.GetFileName(fileNames(i)))
+                ListBox1.Items.Add(fileNames(i))
+                ListBox2.Items.Add(System.IO.Path.GetFileNameWithoutExtension(fileNames(i)))
+
             Next
         End If
 
@@ -20,7 +22,7 @@ Public Class Form1
 
     Private Sub PlayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlayToolStripMenuItem.Click
         AxWindowsMediaPlayer1.Ctlcontrols.play()
-        AxWindowsMediaPlayer1.URL = ListBox1.SelectedItem.split("|")(0)
+        AxWindowsMediaPlayer1.URL = ListBox1.SelectedItem
         SeekBar.Value = 0
         SeekTimer.Start()
     End Sub
@@ -31,11 +33,17 @@ Public Class Form1
     End Sub
 
     Private Sub PrevToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrevToolStripMenuItem.Click
-        AxWindowsMediaPlayer1.Ctlcontrols.previous()
+        Me.ListBox1.SelectedIndex = Me.ListBox1.SelectedIndex - 1
+        AxWindowsMediaPlayer1.URL = ListBox1.SelectedItem
+        AxWindowsMediaPlayer1.Ctlcontrols.play()
     End Sub
 
     Private Sub NextToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NextToolStripMenuItem.Click
-        AxWindowsMediaPlayer1.Ctlcontrols.next()
+        If ListBox1.Items.Count > 1 Then
+                Me.ListBox1.SelectedIndex = Me.ListBox1.SelectedIndex + 1
+                AxWindowsMediaPlayer1.URL = ListBox1.SelectedItem
+                AxWindowsMediaPlayer1.Ctlcontrols.play()
+        End If
     End Sub
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
@@ -54,4 +62,13 @@ Public Class Form1
         SeekBar.Value = 0
     End Sub
 
+    
+    Private Sub ListBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox2.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub ClearListToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearListToolStripMenuItem.Click
+        ListBox1.Items.Clear()
+        ListBox2.Items.Clear()
+    End Sub
 End Class
