@@ -13,7 +13,7 @@ Public Class Form1
             fileNames = OpenFileDialog1.FileNames
 
             For i As Integer = 0 To fileNames.Length - 1
-                Session("Songs") = ListBox1.Items.Add(fileNames(i) + "|" + Path.GetFileName(fileNames(i)))
+                ListBox1.Items.Add(fileNames(i) + "|" + Path.GetFileName(fileNames(i)))
             Next
         End If
 
