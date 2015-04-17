@@ -4,15 +4,16 @@ Imports System.IO
 Public Class Form1
     Dim paths As String()
     Dim fileNames As String()
-    Dim fileDir
+    Dim mp3Songs
 
     Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
         If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
             OpenFileDialog1.Filter = "MP3 files (*.mp3)|*.mp3|WMA files(*wma)|*wma|All files(*.*)|*.*"
             paths = OpenFileDialog1.SafeFileNames
             fileNames = OpenFileDialog1.FileNames
+
             For i As Integer = 0 To fileNames.Length - 1
-                ListBox1.Items.Add(fileNames(i) + "|" + Path.GetFileName(fileNames(i)))
+                Session("Songs") = ListBox1.Items.Add(fileNames(i) + "|" + Path.GetFileName(fileNames(i)))
             Next
         End If
 
