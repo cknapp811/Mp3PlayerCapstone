@@ -52,7 +52,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayToolStripMenuItem, Me.PauseToolStripMenuItem, Me.PrevToolStripMenuItem, Me.NextToolStripMenuItem, Me.ToolStripMenuItem1, Me.OpenToolStripMenuItem, Me.PlayListToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(462, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(397, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -126,7 +126,7 @@ Partial Class Form1
         '
         Me.SeekBar.Location = New System.Drawing.Point(0, 27)
         Me.SeekBar.Name = "SeekBar"
-        Me.SeekBar.Size = New System.Drawing.Size(468, 10)
+        Me.SeekBar.Size = New System.Drawing.Size(393, 10)
         Me.SeekBar.TabIndex = 3
         '
         'SeekTimer
@@ -138,7 +138,7 @@ Partial Class Form1
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(0, 43)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(488, 230)
+        Me.PictureBox1.Size = New System.Drawing.Size(411, 230)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
@@ -150,7 +150,7 @@ Partial Class Form1
         Me.ListBox2.FormattingEnabled = True
         Me.ListBox2.Location = New System.Drawing.Point(23, 59)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(427, 147)
+        Me.ListBox2.Size = New System.Drawing.Size(345, 147)
         Me.ListBox2.TabIndex = 5
         '
         'AxWindowsMediaPlayer1
@@ -168,7 +168,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(462, 218)
+        Me.ClientSize = New System.Drawing.Size(397, 218)
         Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.SeekBar)
         Me.Controls.Add(Me.AxWindowsMediaPlayer1)

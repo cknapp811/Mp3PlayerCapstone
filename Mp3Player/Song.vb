@@ -21,6 +21,6 @@
     End Property
 
     Public Overrides Function ToString() As String
-        Return songTitle
+        Return songTitle & "=" & songDir
     End Function
 End Class
