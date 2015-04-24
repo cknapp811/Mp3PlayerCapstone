@@ -56,16 +56,24 @@ Public Class Form1
     End Sub
     Private Sub StopToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StopToolStripMenuItem.Click
         AxWindowsMediaPlayer1.Ctlcontrols.stop()
-        SeekTimer.Stop()
+        SeekMinutes = 0
+        SeekSeconds = 0
+        CurrentSeek.Text = "0:00"
+        SeekBar.Value = 0
+        SeekTimer.Dispose()
     End Sub
 
-    Private Sub PrevToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NextToolStripMenuItem.Click
+    Private Sub PrevToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrevToolStripMenuItem.Click
         If (Me.ListBox2.TopIndex <> ListBox2.SelectedIndex) Then
             Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex - 1
             AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
             AxWindowsMediaPlayer1.Ctlcontrols.play()
             SongTitle.Text = AxWindowsMediaPlayer1.currentMedia.name
+            SeekMinutes = 0
+            SeekSeconds = 0
+            CurrentSeek.Text = "0:00"
             SeekBar.Value = 0
+            SeekTimer.Stop()
             SeekTimer.Start()
         End If
     End Sub
@@ -76,7 +84,11 @@ Public Class Form1
             AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
             AxWindowsMediaPlayer1.Ctlcontrols.play()
             SongTitle.Text = AxWindowsMediaPlayer1.currentMedia.name
+            SeekMinutes = 0
+            SeekSeconds = 0
+            CurrentSeek.Text = "0:00"
             SeekBar.Value = 0
+            SeekTimer.Stop()
             SeekTimer.Start()
         End If
     End Sub
@@ -99,12 +111,15 @@ Public Class Form1
         Else
             SeekTimer.Stop()
             SeekBar.Value = 0
-
             If ((Me.ListBox2.Items.Count - 1) <> Me.ListBox2.SelectedIndex) Then
                 Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex + 1
-                ListBox2.SelectedIndex = 0
                 AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
                 AxWindowsMediaPlayer1.Ctlcontrols.play()
+                CurrentSeek.Text = "0:00"
+                SeekBar.Value = 0
+                SeekMinutes = 0
+                SeekSeconds = 0
+                SeekTimer.Stop()
                 SeekTimer.Start()
             End If
         End If
