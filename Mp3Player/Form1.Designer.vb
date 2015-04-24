@@ -29,6 +29,7 @@ Partial Class Form1
         Me.StopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrevToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NextToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+<<<<<<< HEAD
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlayListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -36,6 +37,8 @@ Partial Class Form1
         Me.SaveListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClearListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+=======
+>>>>>>> 9368f791bf42e229c615b685cf9121eb654949cb
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.SeekBar = New System.Windows.Forms.ProgressBar()
@@ -48,18 +51,32 @@ Partial Class Form1
         Me.SongTitle = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.MenuStrip3 = New System.Windows.Forms.MenuStrip()
+        Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PlayListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoadListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClearListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip3.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Transparent
+<<<<<<< HEAD
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayToolStripMenuItem, Me.StopToolStripMenuItem, Me.PrevToolStripMenuItem, Me.NextToolStripMenuItem, Me.ToolStripMenuItem1, Me.OpenToolStripMenuItem, Me.PlayListToolStripMenuItem, Me.ToolStripMenuItem2})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(441, 24)
+=======
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayToolStripMenuItem, Me.StopToolStripMenuItem, Me.PrevToolStripMenuItem, Me.NextToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(453, 24)
+>>>>>>> 9368f791bf42e229c615b685cf9121eb654949cb
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -87,6 +104,7 @@ Partial Class Form1
         Me.NextToolStripMenuItem.Size = New System.Drawing.Size(35, 20)
         Me.NextToolStripMenuItem.Text = ">>"
         '
+<<<<<<< HEAD
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
@@ -131,6 +149,8 @@ Partial Class Form1
         Me.ToolStripMenuItem2.Size = New System.Drawing.Size(24, 20)
         Me.ToolStripMenuItem2.Text = "-"
         '
+=======
+>>>>>>> 9368f791bf42e229c615b685cf9121eb654949cb
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "SelectFiles"
@@ -144,6 +164,7 @@ Partial Class Form1
         '
         'SeekBar
         '
+        Me.SeekBar.ForeColor = System.Drawing.Color.Fuchsia
         Me.SeekBar.Location = New System.Drawing.Point(37, 73)
         Me.SeekBar.Name = "SeekBar"
         Me.SeekBar.Size = New System.Drawing.Size(364, 10)
@@ -231,12 +252,61 @@ Partial Class Form1
         Me.GroupBox2.TabIndex = 8
         Me.GroupBox2.TabStop = False
         '
+        'MenuStrip3
+        '
+        Me.MenuStrip3.BackColor = System.Drawing.Color.Transparent
+        Me.MenuStrip3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.MenuStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.PlayListToolStripMenuItem})
+        Me.MenuStrip3.Location = New System.Drawing.Point(0, 270)
+        Me.MenuStrip3.Name = "MenuStrip3"
+        Me.MenuStrip3.Size = New System.Drawing.Size(453, 24)
+        Me.MenuStrip3.TabIndex = 10
+        Me.MenuStrip3.Text = "MenuStrip3"
+        '
+        'OpenToolStripMenuItem
+        '
+        Me.OpenToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
+        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(74, 20)
+        Me.OpenToolStripMenuItem.Text = "Open Files"
+        '
+        'PlayListToolStripMenuItem
+        '
+        Me.PlayListToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.PlayListToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadListToolStripMenuItem1, Me.SaveListToolStripMenuItem1, Me.ClearListToolStripMenuItem1})
+        Me.PlayListToolStripMenuItem.Name = "PlayListToolStripMenuItem"
+        Me.PlayListToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
+        Me.PlayListToolStripMenuItem.Text = "Play List"
+        '
+        'LoadListToolStripMenuItem1
+        '
+        Me.LoadListToolStripMenuItem1.Name = "LoadListToolStripMenuItem1"
+        Me.LoadListToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.LoadListToolStripMenuItem1.Text = "Load List"
+        '
+        'SaveListToolStripMenuItem1
+        '
+        Me.SaveListToolStripMenuItem1.Name = "SaveListToolStripMenuItem1"
+        Me.SaveListToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.SaveListToolStripMenuItem1.Text = "Save List"
+        '
+        'ClearListToolStripMenuItem1
+        '
+        Me.ClearListToolStripMenuItem1.Name = "ClearListToolStripMenuItem1"
+        Me.ClearListToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.ClearListToolStripMenuItem1.Text = "Clear List"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+<<<<<<< HEAD
         Me.ClientSize = New System.Drawing.Size(441, 251)
+=======
+        Me.ClientSize = New System.Drawing.Size(453, 294)
+        Me.Controls.Add(Me.MenuStrip3)
+>>>>>>> 9368f791bf42e229c615b685cf9121eb654949cb
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.SongTitle)
@@ -254,12 +324,13 @@ Partial Class Form1
         Me.MenuStrip1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip3.ResumeLayout(False)
+        Me.MenuStrip3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents OpenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PlayToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StopToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PrevToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -271,16 +342,20 @@ Partial Class Form1
     Public WithEvents SeekTimer As System.Windows.Forms.Timer
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents ListBox2 As System.Windows.Forms.ListBox
-    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PlayListToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents LoadListToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SaveListToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ClearListToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CurrentSeek As System.Windows.Forms.Label
     Friend WithEvents TotalLength As System.Windows.Forms.Label
     Friend WithEvents SongTitle As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+<<<<<<< HEAD
     Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+=======
+    Friend WithEvents MenuStrip3 As System.Windows.Forms.MenuStrip
+    Friend WithEvents OpenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PlayListToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LoadListToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SaveListToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ClearListToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+>>>>>>> 9368f791bf42e229c615b685cf9121eb654949cb
 
 End Class
