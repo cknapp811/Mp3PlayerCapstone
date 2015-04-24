@@ -136,8 +136,9 @@ Public Class Form1
     End Sub
 
     Private Sub ClearListToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ClearListToolStripMenuItem1.Click
-
+        ListBox2.Items.Clear()
     End Sub
+
 End Class
 
 

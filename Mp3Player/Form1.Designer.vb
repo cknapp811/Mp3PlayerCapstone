@@ -100,6 +100,7 @@ Partial Class Form1
         '
         'SeekBar
         '
+        Me.SeekBar.ForeColor = System.Drawing.Color.Fuchsia
         Me.SeekBar.Location = New System.Drawing.Point(37, 73)
         Me.SeekBar.Name = "SeekBar"
         Me.SeekBar.Size = New System.Drawing.Size(364, 10)
