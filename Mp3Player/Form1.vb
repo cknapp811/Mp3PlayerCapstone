@@ -1,7 +1,12 @@
 ﻿Imports WMPLib
 Imports System.IO
+Imports System.Runtime.InteropServices
 
 Public Class Form1
+    Private Const APPCOMMAND_VOLUME_MUTE As Integer = &H80000
+    Private Const APPCOMMAND_VOLUME_UP As Integer = &HA0000
+    Private Const APPCOMMAND_VOLUME_DOWN As Integer = &H90000
+    Private Const WM_APPCOMMAND As Integer = &H319
     Dim paths As String()
     Dim fileNames As String()
     Dim song As Song = New Song()
@@ -11,7 +16,15 @@ Public Class Form1
     Dim TotalSeconds As String
     Dim ExpandMp3 As Boolean = False
     Dim playstate As Long
+    Dim TrcBarValue As Integer
 
+    <DllImport("user32.dll")> Public Shared Function SendMessageW(ByVal hWnd As IntPtr, ByVal Msg As Integer, ByVal wParam As IntPtr, ByVal lParam As IntPtr) As IntPtr
+    End Function
+
+
+    Private Sub tbVolume_ValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles tbVolume.ValueChanged
+        TrcBarValue = tbVolume.Value
+    End Sub
     Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
         If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
             paths = OpenFileDialog1.SafeFileNames
@@ -127,6 +140,7 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SeekBar.Value = 0
+        tbVolume.Maximum = 100
     End Sub
 
     Private Sub LoadListToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LoadListToolStripMenuItem1.Click
@@ -177,6 +191,28 @@ Public Class Form1
             ExpandMp3 = False
             Me.Size = New System.Drawing.Size(457, 300)
         End If
+    End Sub
+
+
+    Private Sub tbVolume_Scroll(sender As Object, e As EventArgs) Handles tbVolume.Scroll
+        Dim TrcBarDirection As Integer = tbVolume.Value()
+        If tbVolume.Value > TrcBarValue Then
+            For TrcBarDirection = 0 To TrcBarDirection
+                SendMessageW(Me.Handle, WM_APPCOMMAND, Me.Handle, New IntPtr(APPCOMMAND_VOLUME_UP))
+            Next
+        Else : For TrcBarDirection = 0 To TrcBarValue
+                SendMessageW(Me.Handle, WM_APPCOMMAND, Me.Handle, New IntPtr(APPCOMMAND_VOLUME_DOWN))
+            Next
+        End If
+
+    End Sub
+    Private Sub EMC2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EMC2ToolStripMenuItem.Click
+        PictureBox1.Image = My.Resources.EMC2
+    End Sub
+
+    Private Sub OrbeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrbeToolStripMenuItem.Click
+        PictureBox1.Image = My.Resources.orbe
+
     End Sub
 End Class
 
