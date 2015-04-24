@@ -30,6 +30,9 @@ Partial Class Form1
         Me.PrevToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NextToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ThemesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EMC2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OrbeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
@@ -52,9 +55,6 @@ Partial Class Form1
         Me.tbVolume = New System.Windows.Forms.TrackBar()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.ThemesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EMC2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OrbeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,7 +70,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayToolStripMenuItem, Me.StopToolStripMenuItem, Me.PrevToolStripMenuItem, Me.NextToolStripMenuItem, Me.ToolStripMenuItem1, Me.ThemesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(895, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(455, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -105,6 +105,27 @@ Partial Class Form1
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(24, 20)
         Me.ToolStripMenuItem1.Text = "-"
         '
+        'ThemesToolStripMenuItem
+        '
+        Me.ThemesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EMC2ToolStripMenuItem, Me.OrbeToolStripMenuItem})
+        Me.ThemesToolStripMenuItem.Name = "ThemesToolStripMenuItem"
+        Me.ThemesToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.ThemesToolStripMenuItem.Text = "Themes"
+        '
+        'EMC2ToolStripMenuItem
+        '
+        Me.EMC2ToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.EMC2
+        Me.EMC2ToolStripMenuItem.Name = "EMC2ToolStripMenuItem"
+        Me.EMC2ToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
+        Me.EMC2ToolStripMenuItem.Text = "E=MC2"
+        '
+        'OrbeToolStripMenuItem
+        '
+        Me.OrbeToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.orbe
+        Me.OrbeToolStripMenuItem.Name = "OrbeToolStripMenuItem"
+        Me.OrbeToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
+        Me.OrbeToolStripMenuItem.Text = "Orbe"
+        '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
@@ -136,9 +157,9 @@ Partial Class Form1
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(533, 73)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 27)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(411, 242)
+        Me.PictureBox1.Size = New System.Drawing.Size(451, 293)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
@@ -215,9 +236,9 @@ Partial Class Form1
         Me.MenuStrip3.BackColor = System.Drawing.Color.Transparent
         Me.MenuStrip3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.MenuStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.PlayListToolStripMenuItem})
-        Me.MenuStrip3.Location = New System.Drawing.Point(0, 399)
+        Me.MenuStrip3.Location = New System.Drawing.Point(0, 274)
         Me.MenuStrip3.Name = "MenuStrip3"
-        Me.MenuStrip3.Size = New System.Drawing.Size(895, 24)
+        Me.MenuStrip3.Size = New System.Drawing.Size(455, 24)
         Me.MenuStrip3.TabIndex = 10
         Me.MenuStrip3.Text = "MenuStrip3"
         '
@@ -321,7 +342,6 @@ Partial Class Form1
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.tbVolume)
-
         Me.Controls.Add(Me.MenuStrip3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
