@@ -20,10 +20,21 @@ Public Class Form1
     End Sub
 
     Private Sub PlayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlayToolStripMenuItem.Click
-        AxWindowsMediaPlayer1.Ctlcontrols.play()
         AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
-        SeekBar.Value = 0
-        SeekTimer.Start()
+        If ListBox2.SelectedItem = Nothing Then
+            ListBox2.SetSelected(0, True)
+        ElseIf ListBox2.TopIndex = ListBox2.SelectedIndex Then
+            AxWindowsMediaPlayer1.Ctlcontrols.play()
+            ListBox2.SetSelected(0, True)
+            SeekBar.Value = 0
+            SeekTimer.Start()
+        Else
+            AxWindowsMediaPlayer1.Ctlcontrols.play()
+            SeekBar.Value = 0
+            SeekTimer.Start()
+        End If
+
+            
     End Sub
 
     Private Sub PauseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PauseToolStripMenuItem.Click
@@ -38,9 +49,17 @@ Public Class Form1
     End Sub
 
     Private Sub NextToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NextToolStripMenuItem.Click
+        For i = 0 To ListBox2.SelectedValue - 1
+
+        Next i
+
         If ListBox2.Items.Count >= 1 Then
+
             Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex + 1
             AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
+            AxWindowsMediaPlayer1.Ctlcontrols.play()
+        Else
+            Me.ListBox2.SelectedIndex = Me.ListBox2.TopIndex
             AxWindowsMediaPlayer1.Ctlcontrols.play()
         End If
     End Sub
