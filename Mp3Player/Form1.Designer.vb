@@ -49,10 +49,16 @@ Partial Class Form1
         Me.LoadListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClearListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tbVolume = New System.Windows.Forms.TrackBar()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip3.SuspendLayout()
+        CType(Me.tbVolume, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -245,12 +251,50 @@ Partial Class Form1
         Me.ClearListToolStripMenuItem1.Size = New System.Drawing.Size(122, 22)
         Me.ClearListToolStripMenuItem1.Text = "Clear List"
         '
+        'tbVolume
+        '
+        Me.tbVolume.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.tbVolume.Location = New System.Drawing.Point(37, 231)
+        Me.tbVolume.Maximum = 100
+        Me.tbVolume.Name = "tbVolume"
+        Me.tbVolume.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.tbVolume.Size = New System.Drawing.Size(86, 45)
+        Me.tbVolume.TabIndex = 11
+        Me.tbVolume.TickFrequency = 10
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(129, 231)
+        Me.PictureBox2.MaximumSize = New System.Drawing.Size(20, 20)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(20, 20)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 12
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(12, 231)
+        Me.PictureBox3.MaximumSize = New System.Drawing.Size(20, 20)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(20, 20)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 13
+        Me.PictureBox3.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(453, 255)
+        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.tbVolume)
         Me.Controls.Add(Me.MenuStrip3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -271,6 +315,9 @@ Partial Class Form1
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip3.ResumeLayout(False)
         Me.MenuStrip3.PerformLayout()
+        CType(Me.tbVolume, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -302,6 +349,9 @@ Partial Class Form1
     Friend WithEvents SaveListToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ClearListToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tbVolume As System.Windows.Forms.TrackBar
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
 
 
 End Class
