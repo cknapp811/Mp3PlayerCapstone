@@ -9,6 +9,7 @@ Public Class Form1
     Dim SeekMinutes As Integer
     Dim PlaySwapper As String = True
     Dim TotalSeconds As String
+    Dim ExpandMp3 As Boolean = False
 
     Public Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
         If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
@@ -137,6 +138,19 @@ Public Class Form1
 
     Private Sub ClearListToolStripMenuItem1_Click_1(sender As Object, e As EventArgs) Handles ClearListToolStripMenuItem1.Click
         ListBox2.Items.Clear()
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        If ExpandMp3 = False Then
+            ToolStripMenuItem2.Text = "+"
+            ExpandMp3 = True
+            Me.Size = New System.Drawing.Size(457, 125)
+        Else
+            ToolStripMenuItem2.Text = "-"
+            ExpandMp3 = False
+            Me.Size = New System.Drawing.Size(457, 300)
+        End If
+
     End Sub
 End Class
 

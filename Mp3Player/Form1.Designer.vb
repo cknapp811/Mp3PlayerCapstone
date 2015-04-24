@@ -35,6 +35,7 @@ Partial Class Form1
         Me.LoadListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClearListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.SeekBar = New System.Windows.Forms.ProgressBar()
@@ -55,7 +56,7 @@ Partial Class Form1
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Transparent
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayToolStripMenuItem, Me.StopToolStripMenuItem, Me.PrevToolStripMenuItem, Me.NextToolStripMenuItem, Me.ToolStripMenuItem1, Me.OpenToolStripMenuItem, Me.PlayListToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayToolStripMenuItem, Me.StopToolStripMenuItem, Me.PrevToolStripMenuItem, Me.NextToolStripMenuItem, Me.ToolStripMenuItem1, Me.OpenToolStripMenuItem, Me.PlayListToolStripMenuItem, Me.ToolStripMenuItem2})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(441, 24)
@@ -123,6 +124,13 @@ Partial Class Form1
         Me.ClearListToolStripMenuItem1.Size = New System.Drawing.Size(122, 22)
         Me.ClearListToolStripMenuItem1.Text = "Clear List"
         '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(24, 20)
+        Me.ToolStripMenuItem2.Text = "-"
+        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "SelectFiles"
@@ -140,6 +148,7 @@ Partial Class Form1
         Me.SeekBar.Name = "SeekBar"
         Me.SeekBar.Size = New System.Drawing.Size(364, 10)
         Me.SeekBar.TabIndex = 1
+
         '
         'SeekTimer
         '
@@ -227,7 +236,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(441, 248)
+        Me.ClientSize = New System.Drawing.Size(441, 251)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.SongTitle)
@@ -272,5 +281,6 @@ Partial Class Form1
     Friend WithEvents SongTitle As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
 
 End Class
