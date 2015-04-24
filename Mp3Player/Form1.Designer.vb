@@ -49,6 +49,9 @@ Partial Class Form1
         Me.LoadListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClearListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ThemesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EMC2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OrbeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,10 +61,10 @@ Partial Class Form1
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Transparent
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayToolStripMenuItem, Me.StopToolStripMenuItem, Me.PrevToolStripMenuItem, Me.NextToolStripMenuItem, Me.ToolStripMenuItem1})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayToolStripMenuItem, Me.StopToolStripMenuItem, Me.PrevToolStripMenuItem, Me.NextToolStripMenuItem, Me.ToolStripMenuItem1, Me.ThemesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(453, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(895, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -206,9 +209,9 @@ Partial Class Form1
         Me.MenuStrip3.BackColor = System.Drawing.Color.Transparent
         Me.MenuStrip3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.MenuStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.PlayListToolStripMenuItem})
-        Me.MenuStrip3.Location = New System.Drawing.Point(0, 231)
+        Me.MenuStrip3.Location = New System.Drawing.Point(0, 399)
         Me.MenuStrip3.Name = "MenuStrip3"
-        Me.MenuStrip3.Size = New System.Drawing.Size(453, 24)
+        Me.MenuStrip3.Size = New System.Drawing.Size(895, 24)
         Me.MenuStrip3.TabIndex = 10
         Me.MenuStrip3.Text = "MenuStrip3"
         '
@@ -245,12 +248,33 @@ Partial Class Form1
         Me.ClearListToolStripMenuItem1.Size = New System.Drawing.Size(122, 22)
         Me.ClearListToolStripMenuItem1.Text = "Clear List"
         '
+        'ThemesToolStripMenuItem
+        '
+        Me.ThemesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EMC2ToolStripMenuItem, Me.OrbeToolStripMenuItem})
+        Me.ThemesToolStripMenuItem.Name = "ThemesToolStripMenuItem"
+        Me.ThemesToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.ThemesToolStripMenuItem.Text = "Themes"
+        '
+        'EMC2ToolStripMenuItem
+        '
+        Me.EMC2ToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.EMC2
+        Me.EMC2ToolStripMenuItem.Name = "EMC2ToolStripMenuItem"
+        Me.EMC2ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EMC2ToolStripMenuItem.Text = "E=MC2"
+        '
+        'OrbeToolStripMenuItem
+        '
+        Me.OrbeToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.orbe
+        Me.OrbeToolStripMenuItem.Name = "OrbeToolStripMenuItem"
+        Me.OrbeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.OrbeToolStripMenuItem.Text = "Orbe"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(453, 255)
+        Me.ClientSize = New System.Drawing.Size(895, 423)
         Me.Controls.Add(Me.MenuStrip3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -302,6 +326,9 @@ Partial Class Form1
     Friend WithEvents SaveListToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ClearListToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ThemesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EMC2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents OrbeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class

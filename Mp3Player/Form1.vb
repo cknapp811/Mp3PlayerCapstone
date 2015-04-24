@@ -163,6 +163,14 @@ Public Class Form1
             Me.Size = New System.Drawing.Size(457, 300)
         End If
     End Sub
+
+    Private Sub EMC2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EMC2ToolStripMenuItem.Click
+        PictureBox1.Image = My.Resources.EMC2
+    End Sub
+
+    Private Sub OrbeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrbeToolStripMenuItem.Click
+        PictureBox1.Image = My.Resources.orbe
+    End Sub
 End Class
 
 
