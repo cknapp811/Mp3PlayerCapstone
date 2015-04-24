@@ -10,7 +10,7 @@ Public Class Form1
     Dim PlaySwapper As String = True
     Dim TotalSeconds As String
 
-    Public Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
+    Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
         If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
             paths = OpenFileDialog1.SafeFileNames
             fileNames = OpenFileDialog1.FileNames
@@ -102,7 +102,7 @@ Public Class Form1
         SeekBar.Value = 0
     End Sub
 
-    Private Sub LoadListToolStripMenuItem1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoadListToolStripMenuItem1.Click
+    Private Sub LoadListToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LoadListToolStripMenuItem1.Click
         Dim oReader As StreamReader
         If OpenFileDialog2.ShowDialog = Windows.Forms.DialogResult.OK Then
             Dim HasLine As Boolean = True
@@ -135,8 +135,8 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub ClearListToolStripMenuItem1_Click_1(sender As Object, e As EventArgs) Handles ClearListToolStripMenuItem1.Click
-        ListBox2.Items.Clear()
+    Private Sub ClearListToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ClearListToolStripMenuItem1.Click
+
     End Sub
 End Class
 
