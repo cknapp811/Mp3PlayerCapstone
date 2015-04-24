@@ -178,16 +178,26 @@ Public Class Form1
         End If
     End Sub
 
+
     Private Sub tbVolume_Scroll(sender As Object, e As EventArgs) Handles tbVolume.Scroll
         Dim TrcBarDirection As Integer = tbVolume.Value()
-19:     If tbVolume.Value > TrcBarValue Then
-20:         For TrcBarDirection = 0 To TrcBarDirection
-21:             SendMessageW(Me.Handle, WM_APPCOMMAND, Me.Handle, New IntPtr(APPCOMMAND_VOLUME_UP))
-22:         Next
-23:     Else : For TrcBarDirection = 0 To TrcBarValue
-24:             SendMessageW(Me.Handle, WM_APPCOMMAND, Me.Handle, New IntPtr(APPCOMMAND_VOLUME_DOWN))
-25:         Next
-26:     End If
+        If tbVolume.Value > TrcBarValue Then
+            For TrcBarDirection = 0 To TrcBarDirection
+                SendMessageW(Me.Handle, WM_APPCOMMAND, Me.Handle, New IntPtr(APPCOMMAND_VOLUME_UP))
+            Next
+        Else : For TrcBarDirection = 0 To TrcBarValue
+                SendMessageW(Me.Handle, WM_APPCOMMAND, Me.Handle, New IntPtr(APPCOMMAND_VOLUME_DOWN))
+            Next
+        End If
+
+    End Sub
+    Private Sub EMC2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EMC2ToolStripMenuItem.Click
+        PictureBox1.Image = My.Resources.EMC2
+    End Sub
+
+    Private Sub OrbeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrbeToolStripMenuItem.Click
+        PictureBox1.Image = My.Resources.orbe
+
     End Sub
 End Class
 

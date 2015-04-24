@@ -73,6 +73,7 @@ C:\Users\mallman1\Desktop\mp3\Mp3Player\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\mallman1\Desktop\mp3\Mp3Player\obj\Debug\Mp3Player.Form1.resources
 C:\Users\mallman1\Desktop\mp3\Mp3Player\obj\Debug\Mp3Player.Resources.resources
 C:\Users\mallman1\Desktop\mp3\Mp3Player\obj\Debug\Mp3Player.vbproj.GenerateResource.Cache
+<<<<<<< HEAD
 C:\Users\mallman1\Desktop\mp3playa\Mp3PlayerCapstone\Mp3Player\bin\Debug\Mp3Player.exe.config
 C:\Users\mallman1\Desktop\mp3playa\Mp3PlayerCapstone\Mp3Player\obj\Debug\Interop.WMPLib.dll
 C:\Users\mallman1\Desktop\mp3playa\Mp3PlayerCapstone\Mp3Player\obj\Debug\AxInterop.WMPLib.dll
@@ -88,3 +89,20 @@ C:\Users\mallman1\Desktop\mp3playa\Mp3PlayerCapstone\Mp3Player\bin\Debug\AxInter
 C:\Users\mallman1\Desktop\mp3playa\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.Form1.resources
 C:\Users\mallman1\Desktop\mp3playa\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.Resources.resources
 C:\Users\mallman1\Desktop\mp3playa\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.vbproj.GenerateResource.Cache
+=======
+N:\jneath\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\bin\Debug\Mp3Player.exe.config
+N:\jneath\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Interop.WMPLib.dll
+N:\jneath\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\AxInterop.WMPLib.dll
+N:\jneath\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.vbproj.ResolveComReference.cache
+N:\jneath\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.exe
+N:\jneath\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.xml
+N:\jneath\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.pdb
+N:\jneath\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\bin\Debug\Mp3Player.exe
+N:\jneath\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\bin\Debug\Mp3Player.pdb
+N:\jneath\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\bin\Debug\Mp3Player.xml
+N:\jneath\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\bin\Debug\Interop.WMPLib.dll
+N:\jneath\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\bin\Debug\AxInterop.WMPLib.dll
+N:\jneath\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.Form1.resources
+N:\jneath\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.Resources.resources
+N:\jneath\Documents\GitHub\Mp3PlayerCapstone\Mp3Player\obj\Debug\Mp3Player.vbproj.GenerateResource.Cache
+>>>>>>> b5f86235db58c084c4d28c37684170b8046b923a
