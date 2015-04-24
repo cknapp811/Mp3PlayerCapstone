@@ -9,6 +9,7 @@ Public Class Form1
     Dim SeekMinutes As Integer
     Dim PlaySwapper As String = True
     Dim TotalSeconds As String
+    Dim playstate As Long
 
     Public Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
         If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
@@ -18,6 +19,7 @@ Public Class Form1
                 song.songTitle = System.IO.Path.GetFileName(fileNames(i))
                 song.songDir = Path.GetDirectoryName(fileNames(i))
                 ListBox2.Items.Add(song.songTitle)
+                ListBox2.SelectedIndex = 0
             Next
         End If
     End Sub
@@ -26,23 +28,31 @@ Public Class Form1
         Try
             If PlaySwapper = True Then
                 PlaySwapper = False
-                Me.PlayToolStripMenuItem.Text = "Pause"
+                ListBox2.SelectedItem = 0
+                PlayToolStripMenuItem.Text = "Pause"
                 AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
-                AxWindowsMediaPlayer1.Ctlcontrols.play()
+                playstate = WMPPlayState.wmppsPlaying
                 SongTitle.Text = AxWindowsMediaPlayer1.currentMedia.name
                 SeekBar.Value = 0
                 SeekTimer.Start()
-            Else
-                PlaySwapper = True
-                Me.PlayToolStripMenuItem.Text = "Play"
+            ElseIf playstate = 3 Then
                 AxWindowsMediaPlayer1.Ctlcontrols.pause()
+                PlayToolStripMenuItem.Text = "Play"
+                playstate = WMPPlayState.wmppsPaused
                 SeekTimer.Stop()
+            ElseIf playstate = 2 Then
+                AxWindowsMediaPlayer1.Ctlcontrols.play()
+                PlayToolStripMenuItem.Text = "Pause"
+                playstate = WMPPlayState.wmppsPlaying
+                SeekTimer.Start()
             End If
+
         Catch ex As Exception
+            PlayToolStripMenuItem.Text = "Play"
+            PlaySwapper = True
             MsgBox("ERROR" & vbCrLf & "PLEASE MAKE SURE A SONG IS SELECTED OR PLAYLIST IS LOADED" & vbCrLf & ex.Message)
         End Try
     End Sub
-
     Private Sub StopToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StopToolStripMenuItem.Click
         AxWindowsMediaPlayer1.Ctlcontrols.stop()
         SeekTimer.Stop()
@@ -91,6 +101,7 @@ Public Class Form1
 
             If ((Me.ListBox2.Items.Count - 1) <> Me.ListBox2.SelectedIndex) Then
                 Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex + 1
+                ListBox2.SelectedIndex = 0
                 AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
                 AxWindowsMediaPlayer1.Ctlcontrols.play()
                 SeekTimer.Start()
@@ -115,6 +126,7 @@ Public Class Form1
                     song.songTitle = strReader.Split("=")(0)
                     song.songDir = strReader.Split("=")(1)
                     ListBox2.Items.Add(song.songTitle)
+                    ListBox2.SelectedIndex = 0
                 End If
             End While
         End If
