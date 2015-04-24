@@ -58,7 +58,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayToolStripMenuItem, Me.StopToolStripMenuItem, Me.PrevToolStripMenuItem, Me.NextToolStripMenuItem, Me.ToolStripMenuItem1, Me.OpenToolStripMenuItem, Me.PlayListToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(500, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(441, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -108,19 +108,19 @@ Partial Class Form1
         'LoadListToolStripMenuItem1
         '
         Me.LoadListToolStripMenuItem1.Name = "LoadListToolStripMenuItem1"
-        Me.LoadListToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.LoadListToolStripMenuItem1.Size = New System.Drawing.Size(122, 22)
         Me.LoadListToolStripMenuItem1.Text = "Load List"
         '
         'SaveListToolStripMenuItem1
         '
         Me.SaveListToolStripMenuItem1.Name = "SaveListToolStripMenuItem1"
-        Me.SaveListToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.SaveListToolStripMenuItem1.Size = New System.Drawing.Size(122, 22)
         Me.SaveListToolStripMenuItem1.Text = "Save List"
         '
         'ClearListToolStripMenuItem1
         '
         Me.ClearListToolStripMenuItem1.Name = "ClearListToolStripMenuItem1"
-        Me.ClearListToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.ClearListToolStripMenuItem1.Size = New System.Drawing.Size(122, 22)
         Me.ClearListToolStripMenuItem1.Text = "Clear List"
         '
         'OpenFileDialog1
@@ -227,7 +227,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(500, 294)
+        Me.ClientSize = New System.Drawing.Size(441, 248)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.SongTitle)
