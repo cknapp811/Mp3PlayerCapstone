@@ -6,6 +6,7 @@ Public Class Form1
     Dim fileNames As String()
     Dim song As Song = New Song()
     Dim SeekSeconds As String
+    Dim SeekMinutes As Integer
     Dim PlaySwapper As String = True
 
     Public Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
@@ -73,13 +74,14 @@ Public Class Form1
         If (SeekBar.Value < SeekBar.Maximum) Then
             SeekBar.Value = SeekBar.Value + 1
             If SeekSeconds = 59 Then
+                SeekMinutes = SeekMinutes + 1
                 SeekSeconds = "00"
             End If
             If SeekSeconds < 9 Then
                 SeekSeconds = ("0" & SeekSeconds + 1)
             Else : SeekSeconds = SeekSeconds + 1
             End If
-            CurrentSeek.Text = Math.Floor((AxWindowsMediaPlayer1.currentMedia.duration) / 60) & ":" & SeekSeconds
+            CurrentSeek.Text = SeekMinutes & ":" & SeekSeconds
             TotalLength.Text = AxWindowsMediaPlayer1.currentMedia.duration
         Else
             SeekTimer.Stop()
