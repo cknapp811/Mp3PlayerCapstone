@@ -31,6 +31,7 @@ Partial Class Form1
         Me.NextToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ThemesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NoneToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EMC2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OrbeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
@@ -312,10 +313,17 @@ Partial Class Form1
 
         'ThemesToolStripMenuItem
         '
-        Me.ThemesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EMC2ToolStripMenuItem, Me.OrbeToolStripMenuItem})
+        Me.ThemesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NoneToolStripMenuItem, Me.EMC2ToolStripMenuItem, Me.OrbeToolStripMenuItem})
         Me.ThemesToolStripMenuItem.Name = "ThemesToolStripMenuItem"
         Me.ThemesToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.ThemesToolStripMenuItem.Text = "Themes"
+        '
+        'NoneToolStripMenuItem
+        '
+        Me.NoneToolStripMenuItem.Image = Nothing
+        Me.NoneToolStripMenuItem.Name = "NoneToolStripMenuItem"
+        Me.NoneToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NoneToolStripMenuItem.Text = "None"
         '
         'EMC2ToolStripMenuItem
         '
@@ -386,9 +394,7 @@ Partial Class Form1
     Friend WithEvents SongTitle As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-
     Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-
     Friend WithEvents MenuStrip3 As System.Windows.Forms.MenuStrip
     Friend WithEvents OpenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PlayListToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -396,13 +402,14 @@ Partial Class Form1
     Friend WithEvents SaveListToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ClearListToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-
     Friend WithEvents tbVolume As System.Windows.Forms.TrackBar
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents ThemesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents NoneToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EMC2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OrbeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+
 
 
 

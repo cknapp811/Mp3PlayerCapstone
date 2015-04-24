@@ -141,6 +141,7 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SeekBar.Value = 0
         tbVolume.Maximum = 100
+        PictureBox1.Image = Nothing
     End Sub
 
     Private Sub LoadListToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LoadListToolStripMenuItem1.Click
@@ -193,7 +194,6 @@ Public Class Form1
         End If
     End Sub
 
-
     Private Sub tbVolume_Scroll(sender As Object, e As EventArgs) Handles tbVolume.Scroll
         Dim TrcBarDirection As Integer = tbVolume.Value()
         If tbVolume.Value > TrcBarValue Then
@@ -206,13 +206,17 @@ Public Class Form1
         End If
 
     End Sub
+
+    Private Sub NoneToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NoneToolStripMenuItem.Click
+        PictureBox1.Image = Nothing
+    End Sub
+
     Private Sub EMC2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EMC2ToolStripMenuItem.Click
         PictureBox1.Image = My.Resources.EMC2
     End Sub
 
     Private Sub OrbeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrbeToolStripMenuItem.Click
         PictureBox1.Image = My.Resources.orbe
-
     End Sub
 End Class
 
