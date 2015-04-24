@@ -5,11 +5,8 @@ Public Class Form1
     Dim paths As String()
     Dim fileNames As String()
     Dim song As Song = New Song()
-<<<<<<< HEAD
-=======
     Dim SeekSeconds As String
     Dim PlaySwapper As String = True
->>>>>>> amillers-feature
 
     Public Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
         If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
@@ -24,23 +21,6 @@ Public Class Form1
     End Sub
 
     Private Sub PlayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlayToolStripMenuItem.Click
-<<<<<<< HEAD
-        AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
-        If ListBox2.SelectedItem = Nothing Then
-            ListBox2.SetSelected(0, True)
-        ElseIf ListBox2.TopIndex = ListBox2.SelectedIndex Then
-            AxWindowsMediaPlayer1.Ctlcontrols.play()
-            ListBox2.SetSelected(0, True)
-            SeekBar.Value = 0
-            SeekTimer.Start()
-        Else
-            AxWindowsMediaPlayer1.Ctlcontrols.play()
-            SeekBar.Value = 0
-            SeekTimer.Start()
-        End If
-
-            
-=======
         Try
             If PlaySwapper = True Then
                 PlaySwapper = False
@@ -59,7 +39,6 @@ Public Class Form1
         Catch ex As Exception
             MsgBox("ERROR" & vbCrLf & "PLEASE MAKE SURE A SONG IS SELECTED OR PLAYLIST IS LOADED" & vbCrLf & ex.Message)
         End Try
->>>>>>> amillers-feature
     End Sub
 
     Private Sub StopToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StopToolStripMenuItem.Click
@@ -67,26 +46,7 @@ Public Class Form1
         SeekTimer.Stop()
     End Sub
 
-    Private Sub PrevToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrevToolStripMenuItem.Click
-<<<<<<< HEAD
-        Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex - 1
-        AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
-        AxWindowsMediaPlayer1.Ctlcontrols.play()
-    End Sub
-
-    Private Sub NextToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NextToolStripMenuItem.Click
-        For i = 0 To ListBox2.SelectedValue - 1
-
-        Next i
-
-        If ListBox2.Items.Count >= 1 Then
-
-            Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex + 1
-            AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
-            AxWindowsMediaPlayer1.Ctlcontrols.play()
-        Else
-            Me.ListBox2.SelectedIndex = Me.ListBox2.TopIndex
-=======
+    Private Sub PrevToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NextToolStripMenuItem.Click
         If (Me.ListBox2.TopIndex <> ListBox2.SelectedIndex) Then
             Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex - 1
             AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
@@ -101,7 +61,6 @@ Public Class Form1
         If ((Me.ListBox2.Items.Count - 1) <> Me.ListBox2.SelectedIndex) Then
             Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex + 1
             AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
->>>>>>> amillers-feature
             AxWindowsMediaPlayer1.Ctlcontrols.play()
             SongTitle.Text = AxWindowsMediaPlayer1.currentMedia.name
             SeekBar.Value = 0
@@ -140,21 +99,9 @@ Public Class Form1
 
     Private Sub LoadListToolStripMenuItem1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoadListToolStripMenuItem1.Click
         Dim oReader As StreamReader
-<<<<<<< HEAD
-        OpenFileDialog1.CheckFileExists = True
-        OpenFileDialog1.CheckPathExists = True
-        OpenFileDialog1.DefaultExt = "txt"
-        OpenFileDialog1.FileName = ""
-        OpenFileDialog1.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
-        OpenFileDialog1.Multiselect = False
-        If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
-            Dim HasLine As Boolean = True
-            oReader = New StreamReader(OpenFileDialog1.FileName, True)
-=======
         If OpenFileDialog2.ShowDialog = Windows.Forms.DialogResult.OK Then
             Dim HasLine As Boolean = True
             oReader = New StreamReader(OpenFileDialog2.FileName, True)
->>>>>>> amillers-feature
             While HasLine
                 Dim strReader As String = oReader.ReadLine
                 If strReader Is Nothing Then

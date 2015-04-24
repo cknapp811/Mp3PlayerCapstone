@@ -58,11 +58,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayToolStripMenuItem, Me.StopToolStripMenuItem, Me.PrevToolStripMenuItem, Me.NextToolStripMenuItem, Me.ToolStripMenuItem1, Me.OpenToolStripMenuItem, Me.PlayListToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-<<<<<<< HEAD
-        Me.MenuStrip1.Size = New System.Drawing.Size(397, 24)
-=======
         Me.MenuStrip1.Size = New System.Drawing.Size(436, 24)
->>>>>>> amillers-feature
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -142,13 +138,8 @@ Partial Class Form1
         '
         Me.SeekBar.Location = New System.Drawing.Point(37, 73)
         Me.SeekBar.Name = "SeekBar"
-<<<<<<< HEAD
-        Me.SeekBar.Size = New System.Drawing.Size(393, 10)
-        Me.SeekBar.TabIndex = 3
-=======
         Me.SeekBar.Size = New System.Drawing.Size(364, 10)
         Me.SeekBar.TabIndex = 1
->>>>>>> amillers-feature
         '
         'SeekTimer
         '
@@ -159,11 +150,7 @@ Partial Class Form1
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(533, 73)
         Me.PictureBox1.Name = "PictureBox1"
-<<<<<<< HEAD
-        Me.PictureBox1.Size = New System.Drawing.Size(411, 230)
-=======
         Me.PictureBox1.Size = New System.Drawing.Size(411, 242)
->>>>>>> amillers-feature
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
@@ -177,11 +164,7 @@ Partial Class Form1
         Me.ListBox2.ItemHeight = 15
         Me.ListBox2.Location = New System.Drawing.Point(37, 92)
         Me.ListBox2.Name = "ListBox2"
-<<<<<<< HEAD
-        Me.ListBox2.Size = New System.Drawing.Size(345, 147)
-=======
         Me.ListBox2.Size = New System.Drawing.Size(364, 122)
->>>>>>> amillers-feature
         Me.ListBox2.TabIndex = 5
         '
         'AxWindowsMediaPlayer1
@@ -244,16 +227,12 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-<<<<<<< HEAD
-        Me.ClientSize = New System.Drawing.Size(397, 218)
-=======
         Me.ClientSize = New System.Drawing.Size(436, 241)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.SongTitle)
         Me.Controls.Add(Me.TotalLength)
         Me.Controls.Add(Me.CurrentSeek)
->>>>>>> amillers-feature
         Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.SeekBar)
         Me.Controls.Add(Me.AxWindowsMediaPlayer1)
