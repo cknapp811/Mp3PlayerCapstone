@@ -12,72 +12,54 @@ Public Class Form1
     Dim song As Song = New Song()
     Dim SeekSeconds As String
     Dim SeekMinutes As Integer
-    Dim PlaySwapper As String = True
     Dim TotalSeconds As String
     Dim ExpandMp3 As Boolean = False
-    Dim playstate As Long
     Dim TrcBarValue As Integer
+    Dim PlayPauseInit As Boolean = True
+    Dim playstate As Long
 
     <DllImport("user32.dll")> Public Shared Function SendMessageW(ByVal hWnd As IntPtr, ByVal Msg As Integer, ByVal wParam As IntPtr, ByVal lParam As IntPtr) As IntPtr
     End Function
 
-
     Private Sub tbVolume_ValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles tbVolume.ValueChanged
         TrcBarValue = tbVolume.Value
     End Sub
-    Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
-        If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
-            paths = OpenFileDialog1.SafeFileNames
-            fileNames = OpenFileDialog1.FileNames
-            For i As Integer = 0 To fileNames.Length - 1
-                song.songTitle = System.IO.Path.GetFileName(fileNames(i))
-                song.songDir = Path.GetDirectoryName(fileNames(i))
-                ListBox2.Items.Add(song.songTitle)
-                ListBox2.SelectedIndex = 0
-            Next
+
+    Private Sub PlayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlayToolStripMenuItem.Click
+        If PlayPauseInit = True Then
+            AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
+            SongTitle.Text = AxWindowsMediaPlayer1.currentMedia.name
+            PlayPauseInit = False
+        End If
+        If playstate = WMPPlayState.wmppsPlaying Then
+            AxWindowsMediaPlayer1.Ctlcontrols.pause()
+            playstate = WMPPlayState.wmppsPaused
+            PlayToolStripMenuItem.Text = "4"
+            SeekTimer.Stop()
+        Else
+            AxWindowsMediaPlayer1.Ctlcontrols.play()
+            playstate = WMPPlayState.wmppsPlaying
+            PlayToolStripMenuItem.Text = ";"
+            SeekTimer.Start()
         End If
     End Sub
 
-    Private Sub PlayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlayToolStripMenuItem.Click
-        Try
-            If PlaySwapper = True Then
-                PlaySwapper = False
-                ListBox2.SelectedItem = 0
-                PlayToolStripMenuItem.Text = "Pause"
-                AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
-                playstate = WMPPlayState.wmppsPlaying
-                SongTitle.Text = AxWindowsMediaPlayer1.currentMedia.name
-                SeekBar.Value = 0
-                SeekTimer.Start()
-            ElseIf playstate = 3 Then
-                AxWindowsMediaPlayer1.Ctlcontrols.pause()
-                PlayToolStripMenuItem.Text = "Play"
-                playstate = WMPPlayState.wmppsPaused
-                SeekTimer.Stop()
-            ElseIf playstate = 2 Then
-                AxWindowsMediaPlayer1.Ctlcontrols.play()
-                PlayToolStripMenuItem.Text = "Pause"
-                playstate = WMPPlayState.wmppsPlaying
-                SeekTimer.Start()
-            End If
-
-        Catch ex As Exception
-            PlayToolStripMenuItem.Text = "Play"
-            PlaySwapper = True
-            MsgBox("ERROR" & vbCrLf & "PLEASE MAKE SURE A SONG IS SELECTED OR PLAYLIST IS LOADED" & vbCrLf & ex.Message)
-        End Try
-    End Sub
     Private Sub StopToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StopToolStripMenuItem.Click
         AxWindowsMediaPlayer1.Ctlcontrols.stop()
         SeekMinutes = 0
         SeekSeconds = 0
         CurrentSeek.Text = "0:00"
+        TotalLength.Text = "0:00"
+        PlayToolStripMenuItem.Text = "4"
+        playstate = WMPPlayState.wmppsStopped
+        PlayPauseInit = True
         SeekBar.Value = 0
         SeekTimer.Dispose()
     End Sub
 
     Private Sub PrevToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrevToolStripMenuItem.Click
         If (Me.ListBox2.TopIndex <> ListBox2.SelectedIndex) Then
+            SeekTimer.Stop()
             Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex - 1
             AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
             AxWindowsMediaPlayer1.Ctlcontrols.play()
@@ -85,14 +67,15 @@ Public Class Form1
             SeekMinutes = 0
             SeekSeconds = 0
             CurrentSeek.Text = "0:00"
+            TotalLength.Text = "0:00"
             SeekBar.Value = 0
-            SeekTimer.Stop()
             SeekTimer.Start()
         End If
     End Sub
 
     Private Sub NextToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NextToolStripMenuItem.Click
         If ((Me.ListBox2.Items.Count - 1) <> Me.ListBox2.SelectedIndex) Then
+            SeekTimer.Stop()
             Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex + 1
             AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
             AxWindowsMediaPlayer1.Ctlcontrols.play()
@@ -100,8 +83,8 @@ Public Class Form1
             SeekMinutes = 0
             SeekSeconds = 0
             CurrentSeek.Text = "0:00"
+            TotalLength.Text = "0:00"
             SeekBar.Value = 0
-            SeekTimer.Stop()
             SeekTimer.Start()
         End If
     End Sub
@@ -123,16 +106,16 @@ Public Class Form1
             TotalLength.Text = Math.Floor((AxWindowsMediaPlayer1.currentMedia.duration) / 60) & ":" & TotalSeconds
         Else
             SeekTimer.Stop()
-            SeekBar.Value = 0
-            If ((Me.ListBox2.Items.Count - 1) <> Me.ListBox2.SelectedIndex) Then
+            If (Me.ListBox2.Items.Count - 1 <> Me.ListBox2.SelectedIndex) Then
                 Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex + 1
                 AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
                 AxWindowsMediaPlayer1.Ctlcontrols.play()
-                CurrentSeek.Text = "0:00"
-                SeekBar.Value = 0
                 SeekMinutes = 0
                 SeekSeconds = 0
-                SeekTimer.Stop()
+                SongTitle.Text = AxWindowsMediaPlayer1.currentMedia.name
+                CurrentSeek.Text = "0:00"
+                TotalLength.Text = "0:00"
+                SeekBar.Value = 0
                 SeekTimer.Start()
             End If
         End If
@@ -142,6 +125,19 @@ Public Class Form1
         SeekBar.Value = 0
         tbVolume.Maximum = 100
         PictureBox1.Image = Nothing
+    End Sub
+
+    Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
+        If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            paths = OpenFileDialog1.SafeFileNames
+            fileNames = OpenFileDialog1.FileNames
+            For i As Integer = 0 To fileNames.Length - 1
+                song.songTitle = System.IO.Path.GetFileName(fileNames(i))
+                song.songDir = Path.GetDirectoryName(fileNames(i))
+                ListBox2.Items.Add(song.songTitle)
+            Next
+            ListBox2.SelectedIndex = 0
+        End If
     End Sub
 
     Private Sub LoadListToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LoadListToolStripMenuItem1.Click
@@ -157,9 +153,9 @@ Public Class Form1
                     song.songTitle = strReader.Split("=")(0)
                     song.songDir = strReader.Split("=")(1)
                     ListBox2.Items.Add(song.songTitle)
-                    ListBox2.SelectedIndex = 0
                 End If
             End While
+            ListBox2.SelectedIndex = 0
         End If
     End Sub
 
@@ -184,13 +180,17 @@ Public Class Form1
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         If ExpandMp3 = False Then
-            ToolStripMenuItem2.Text = "+"
             ExpandMp3 = True
-            Me.Size = New System.Drawing.Size(457, 125)
+            ToolStripMenuItem1.Text = "6"
+            PlayListToolStripMenuItem.Text = ""
+            OpenToolStripMenuItem.Text = ""
+            Me.Size = New System.Drawing.Size(Me.Width, 165)
         Else
-            ToolStripMenuItem2.Text = "-"
             ExpandMp3 = False
-            Me.Size = New System.Drawing.Size(457, 300)
+            ToolStripMenuItem1.Text = "5"
+            PlayListToolStripMenuItem.Text = "Play List"
+            OpenToolStripMenuItem.Text = "Add Music"
+            Me.Size = New System.Drawing.Size(Me.Width, 300)
         End If
     End Sub
 
@@ -204,7 +204,6 @@ Public Class Form1
                 SendMessageW(Me.Handle, WM_APPCOMMAND, Me.Handle, New IntPtr(APPCOMMAND_VOLUME_DOWN))
             Next
         End If
-
     End Sub
 
     Private Sub NoneToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NoneToolStripMenuItem.Click
