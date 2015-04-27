@@ -71,7 +71,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayToolStripMenuItem, Me.StopToolStripMenuItem, Me.PrevToolStripMenuItem, Me.NextToolStripMenuItem, Me.ToolStripMenuItem1, Me.ThemesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(440, 32)
+        Me.MenuStrip1.Size = New System.Drawing.Size(438, 32)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -123,21 +123,21 @@ Partial Class Form1
         'NoneToolStripMenuItem
         '
         Me.NoneToolStripMenuItem.Name = "NoneToolStripMenuItem"
-        Me.NoneToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
+        Me.NoneToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NoneToolStripMenuItem.Text = "None"
         '
         'EMC2ToolStripMenuItem
         '
         Me.EMC2ToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.EMC2
         Me.EMC2ToolStripMenuItem.Name = "EMC2ToolStripMenuItem"
-        Me.EMC2ToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
+        Me.EMC2ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EMC2ToolStripMenuItem.Text = "E=MC2"
         '
         'OrbeToolStripMenuItem
         '
         Me.OrbeToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.orbe
         Me.OrbeToolStripMenuItem.Name = "OrbeToolStripMenuItem"
-        Me.OrbeToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
+        Me.OrbeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.OrbeToolStripMenuItem.Text = "Orbe"
         '
         'ToolStripMenuItem2
@@ -242,9 +242,9 @@ Partial Class Form1
         Me.MenuStrip3.BackColor = System.Drawing.Color.Transparent
         Me.MenuStrip3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.MenuStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.PlayListToolStripMenuItem})
-        Me.MenuStrip3.Location = New System.Drawing.Point(0, 244)
+        Me.MenuStrip3.Location = New System.Drawing.Point(0, 258)
         Me.MenuStrip3.Name = "MenuStrip3"
-        Me.MenuStrip3.Size = New System.Drawing.Size(440, 24)
+        Me.MenuStrip3.Size = New System.Drawing.Size(438, 24)
         Me.MenuStrip3.TabIndex = 10
         Me.MenuStrip3.Text = "MenuStrip3"
         '
@@ -284,7 +284,7 @@ Partial Class Form1
         'tbVolume
         '
         Me.tbVolume.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.tbVolume.Location = New System.Drawing.Point(31, 244)
+        Me.tbVolume.Location = New System.Drawing.Point(30, 258)
         Me.tbVolume.Maximum = 100
         Me.tbVolume.Name = "tbVolume"
         Me.tbVolume.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -295,8 +295,8 @@ Partial Class Form1
         'PictureBox2
         '
         Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.PictureBox2.InitialImage = CType(resources.GetObject("PictureBox2.InitialImage"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(123, 244)
+        Me.PictureBox2.InitialImage = Nothing
+        Me.PictureBox2.Location = New System.Drawing.Point(122, 258)
         Me.PictureBox2.MaximumSize = New System.Drawing.Size(20, 20)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(20, 20)
@@ -307,8 +307,8 @@ Partial Class Form1
         'PictureBox3
         '
         Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.PictureBox3.InitialImage = CType(resources.GetObject("PictureBox3.InitialImage"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(6, 244)
+        Me.PictureBox3.InitialImage = Nothing
+        Me.PictureBox3.Location = New System.Drawing.Point(5, 258)
         Me.PictureBox3.MaximumSize = New System.Drawing.Size(20, 20)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(20, 20)
@@ -330,7 +330,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(440, 268)
+        Me.ClientSize = New System.Drawing.Size(438, 282)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.tbVolume)
