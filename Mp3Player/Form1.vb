@@ -17,6 +17,10 @@ Public Class Form1
     Dim TrcBarValue As Integer
     Dim PlayPauseInit As Boolean = True
     Dim playstate As Long
+    Dim RandomIndex As New Random
+    Dim DirLoad As String = My.Settings.PlaylistLoad
+    Dim ShuffleList As Boolean = False
+    Dim RepeatSong As Boolean = False
 
     <DllImport("user32.dll")> Public Shared Function SendMessageW(ByVal hWnd As IntPtr, ByVal Msg As Integer, ByVal wParam As IntPtr, ByVal lParam As IntPtr) As IntPtr
     End Function
@@ -25,36 +29,52 @@ Public Class Form1
         TrcBarValue = tbVolume.Value
     End Sub
 
+    Private Sub Listbox2_DoubleClick(sender As Object, e As EventArgs) Handles ListBox2.DoubleClick
+        AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
+        SongTitle.Text = AxWindowsMediaPlayer1.currentMedia.name
+        SongTitle.Location = New Point(0, SongTitle.Location.Y)
+        PlayPauseInit = False
+        AxWindowsMediaPlayer1.Ctlcontrols.play()
+        playstate = WMPPlayState.wmppsPlaying
+        PlayToolStripMenuItem.Text = ";"
+        resetGUI()
+        SeekTimer.Start()
+    End Sub
+
+
     Private Sub PlayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlayToolStripMenuItem.Click
-        If PlayPauseInit = True Then
-            AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
-            SongTitle.Text = AxWindowsMediaPlayer1.currentMedia.name
-            PlayPauseInit = False
-        End If
-        If playstate = WMPPlayState.wmppsPlaying Then
-            AxWindowsMediaPlayer1.Ctlcontrols.pause()
-            playstate = WMPPlayState.wmppsPaused
-            PlayToolStripMenuItem.Text = "4"
-            SeekTimer.Stop()
-        Else
-            AxWindowsMediaPlayer1.Ctlcontrols.play()
-            playstate = WMPPlayState.wmppsPlaying
-            PlayToolStripMenuItem.Text = ";"
-            SeekTimer.Start()
-        End If
+        Try
+            If PlayPauseInit = True Then
+                AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
+                SongTitle.Text = AxWindowsMediaPlayer1.currentMedia.name
+                SongTitle.Location = New Point(0, SongTitle.Location.Y)
+                PlayPauseInit = False
+            End If
+            If playstate = WMPPlayState.wmppsPlaying Then
+                AxWindowsMediaPlayer1.Ctlcontrols.pause()
+                playstate = WMPPlayState.wmppsPaused
+                PlayToolStripMenuItem.Text = "4"
+                SeekTimer.Stop()
+            Else
+                AxWindowsMediaPlayer1.Ctlcontrols.play()
+                playstate = WMPPlayState.wmppsPlaying
+                PlayToolStripMenuItem.Text = ";"
+                SeekTimer.Start()
+            End If
+        Catch ex As Exception
+            MsgBox("ERROR" & vbCrLf & "You must first load a playlist or select a song." & vbCrLf & "Error code: " & ex.Message)
+
+        End Try
     End Sub
 
     Private Sub StopToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StopToolStripMenuItem.Click
         AxWindowsMediaPlayer1.Ctlcontrols.stop()
-        SeekMinutes = 0
-        SeekSeconds = 0
-        CurrentSeek.Text = "0:00"
-        TotalLength.Text = "0:00"
         PlayToolStripMenuItem.Text = "4"
         playstate = WMPPlayState.wmppsStopped
         PlayPauseInit = True
         SeekBar.Value = 0
         SeekTimer.Dispose()
+        resetGUI()
     End Sub
 
     Private Sub PrevToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrevToolStripMenuItem.Click
@@ -64,11 +84,7 @@ Public Class Form1
             AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
             AxWindowsMediaPlayer1.Ctlcontrols.play()
             SongTitle.Text = AxWindowsMediaPlayer1.currentMedia.name
-            SeekMinutes = 0
-            SeekSeconds = 0
-            CurrentSeek.Text = "0:00"
-            TotalLength.Text = "0:00"
-            SeekBar.Value = 0
+            resetGUI()
             SeekTimer.Start()
         End If
     End Sub
@@ -80,11 +96,7 @@ Public Class Form1
             AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
             AxWindowsMediaPlayer1.Ctlcontrols.play()
             SongTitle.Text = AxWindowsMediaPlayer1.currentMedia.name
-            SeekMinutes = 0
-            SeekSeconds = 0
-            CurrentSeek.Text = "0:00"
-            TotalLength.Text = "0:00"
-            SeekBar.Value = 0
+            resetGUI()
             SeekTimer.Start()
         End If
     End Sub
@@ -106,18 +118,28 @@ Public Class Form1
             TotalLength.Text = Math.Floor((AxWindowsMediaPlayer1.currentMedia.duration) / 60) & ":" & TotalSeconds
         Else
             SeekTimer.Stop()
+            resetGUI()
+            SongTitle.Location = New Point((Me.Width / 2), SongTitle.Location.Y)
             If (Me.ListBox2.Items.Count - 1 <> Me.ListBox2.SelectedIndex) Then
-                Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex + 1
+                If ShuffleList = True Then
+                    Dim i As Integer = ListBox2.Items.Count
+                    Dim SelectedItem As System.Object = ListBox2.Items.Item(RandomIndex.Next(i))
+                    ListBox2.SelectedItem = SelectedItem
+                ElseIf RepeatSong = True Then
+                    Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex
+                Else
+                    Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex + 1
+                End If
                 AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
                 AxWindowsMediaPlayer1.Ctlcontrols.play()
-                SeekMinutes = 0
-                SeekSeconds = 0
                 SongTitle.Text = AxWindowsMediaPlayer1.currentMedia.name
-                CurrentSeek.Text = "0:00"
-                TotalLength.Text = "0:00"
-                SeekBar.Value = 0
                 SeekTimer.Start()
             End If
+        End If
+        If SongTitle.Location.X >= (Me.Width * 1.5 - SongTitle.Location.X) Then
+            SongTitle.Location = New Point(SongTitle.Location.X - Me.Width * 1.5, SongTitle.Location.Y)
+        Else
+            SongTitle.Location = New Point(SongTitle.Location.X + 15, SongTitle.Location.Y)
         End If
     End Sub
 
@@ -125,6 +147,28 @@ Public Class Form1
         SeekBar.Value = 0
         tbVolume.Maximum = 100
         PictureBox1.Image = Nothing
+        Dim HasLine As Boolean = True
+        Dim oReader As StreamReader
+        If DirLoad <> Nothing Then
+            oReader = New StreamReader(DirLoad, True)
+            While HasLine
+                Dim strReader As String = oReader.ReadLine
+                If strReader Is Nothing Then
+                    HasLine = False
+                Else
+                    song.songTitle = strReader.Split("=")(0)
+                    song.songDir = strReader.Split("=")(1)
+                    ListBox2.Items.Add(song.songTitle)
+                End If
+            End While
+            ListBox2.SelectedIndex = 0
+        End If
+        InitSongOptionsSelected()
+        FormBorderStyle = Windows.Forms.FormBorderStyle.FixedSingle
+        MaximizeBox = False
+        MinimizeBox = False
+        ControlBox = False
+        SendMessageW(SeekBar.Handle, 1040, (3 * Rnd()), 0)
     End Sub
 
     Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
@@ -141,8 +185,8 @@ Public Class Form1
     End Sub
 
     Private Sub LoadListToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LoadListToolStripMenuItem1.Click
-        Dim oReader As StreamReader
         If OpenFileDialog2.ShowDialog = Windows.Forms.DialogResult.OK Then
+            Dim oReader As StreamReader
             Dim HasLine As Boolean = True
             oReader = New StreamReader(OpenFileDialog2.FileName, True)
             While HasLine
@@ -166,6 +210,8 @@ Public Class Form1
         saveAsPlaylist.RestoreDirectory = True
         If saveAsPlaylist.ShowDialog() = DialogResult.OK Then
             Dim FileName As Object = saveAsPlaylist.FileName
+            My.Settings.PlaylistLoad = FileName
+            My.Settings.Save()
             Using SW As New IO.StreamWriter(FileName, False)
                 For Each objMp3 As String In Me.ListBox2.Items
                     SW.WriteLine(objMp3 & "=" & song.songDir)
@@ -184,14 +230,24 @@ Public Class Form1
             ToolStripMenuItem1.Text = "6"
             PlayListToolStripMenuItem.Text = ""
             OpenToolStripMenuItem.Text = ""
-            Me.Size = New System.Drawing.Size(Me.Width, 165)
+            Me.Size = New System.Drawing.Size(Me.Width, 175)
         Else
             ExpandMp3 = False
             ToolStripMenuItem1.Text = "5"
             PlayListToolStripMenuItem.Text = "Play List"
             OpenToolStripMenuItem.Text = "Add Music"
-            Me.Size = New System.Drawing.Size(Me.Width, 300)
+            Me.Size = New System.Drawing.Size(Me.Width, 415)
         End If
+    End Sub
+
+    Private Sub resetGUI()
+        SendMessageW(SeekBar.Handle, 1040, (3 * Rnd()), 0)
+        SongTitle.Location = New Point(0, SongTitle.Location.Y)
+        SeekMinutes = 0
+        SeekSeconds = 0
+        CurrentSeek.Text = "0:00"
+        TotalLength.Text = "0:00"
+        SeekBar.Value = 0
     End Sub
 
     Private Sub tbVolume_Scroll(sender As Object, e As EventArgs) Handles tbVolume.Scroll
@@ -217,6 +273,55 @@ Public Class Form1
     Private Sub OrbeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrbeToolStripMenuItem.Click
         PictureBox1.Image = My.Resources.orbe
     End Sub
+
+    Private Sub ShuffleOnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShuffleOnToolStripMenuItem.Click
+        ShuffleList = True
+        RepeatSong = False
+        InitSongOptionsSelected()
+    End Sub
+
+    Private Sub ShuffleOffToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShuffleOffToolStripMenuItem.Click
+        ShuffleList = False
+        InitSongOptionsSelected()
+    End Sub
+
+    Private Sub RepeatOnToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RepeatOnToolStripMenuItem1.Click
+        RepeatSong = True
+        ShuffleList = False
+        InitSongOptionsSelected()
+    End Sub
+
+    Private Sub RepeatOffToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RepeatOffToolStripMenuItem1.Click
+        RepeatSong = False
+        InitSongOptionsSelected()
+    End Sub
+
+    Private Sub InitSongOptionsSelected()
+        If ShuffleList = True Then
+            Me.ShuffleOnToolStripMenuItem.Font = New Font(Me.ShuffleOnToolStripMenuItem.Font, FontStyle.Bold)
+            Me.ShuffleOffToolStripMenuItem.Font = New Font(Me.ShuffleOffToolStripMenuItem.Font, FontStyle.Regular)
+            Me.RepeatOnToolStripMenuItem1.Font = New Font(Me.RepeatOnToolStripMenuItem1.Font, FontStyle.Regular)
+            Me.RepeatOffToolStripMenuItem1.Font = New Font(Me.RepeatOffToolStripMenuItem1.Font, FontStyle.Bold)
+        Else
+            Me.ShuffleOffToolStripMenuItem.Font = New Font(Me.ShuffleOffToolStripMenuItem.Font, FontStyle.Bold)
+            Me.ShuffleOnToolStripMenuItem.Font = New Font(Me.ShuffleOnToolStripMenuItem.Font, FontStyle.Regular)
+        End If
+        If RepeatSong Then
+            Me.RepeatOnToolStripMenuItem1.Font = New Font(Me.RepeatOnToolStripMenuItem1.Font, FontStyle.Bold)
+            Me.RepeatOffToolStripMenuItem1.Font = New Font(Me.ShuffleOffToolStripMenuItem.Font, FontStyle.Regular)
+            Me.ShuffleOnToolStripMenuItem.Font = New Font(Me.ShuffleOnToolStripMenuItem.Font, FontStyle.Regular)
+            Me.ShuffleOffToolStripMenuItem.Font = New Font(Me.ShuffleOffToolStripMenuItem.Font, FontStyle.Bold)
+        Else
+            Me.RepeatOffToolStripMenuItem1.Font = New Font(Me.RepeatOffToolStripMenuItem1.Font, FontStyle.Bold)
+            Me.RepeatOnToolStripMenuItem1.Font = New Font(Me.RepeatOnToolStripMenuItem1.Font, FontStyle.Regular)
+        End If
+    End Sub
+
+    Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
+        Me.Close()
+    End Sub
 End Class
+
+
 
 

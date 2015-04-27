@@ -25,6 +25,16 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SongToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ShuffleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ShuffleOnToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ShuffleOffToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RepeatSongToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RepeatOnToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RepeatOffToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SearchYouTubeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrevToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -68,17 +78,81 @@ Partial Class Form1
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Transparent
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayToolStripMenuItem, Me.StopToolStripMenuItem, Me.PrevToolStripMenuItem, Me.NextToolStripMenuItem, Me.ToolStripMenuItem1, Me.ThemesToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OptionsToolStripMenuItem, Me.PlayToolStripMenuItem, Me.StopToolStripMenuItem, Me.PrevToolStripMenuItem, Me.NextToolStripMenuItem, Me.ToolStripMenuItem1, Me.ThemesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(440, 32)
+        Me.MenuStrip1.Size = New System.Drawing.Size(448, 32)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'OptionsToolStripMenuItem
+        '
+        Me.OptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SongToolStripMenuItem, Me.SearchYouTubeToolStripMenuItem, Me.CloseToolStripMenuItem})
+        Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
+        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(61, 28)
+        Me.OptionsToolStripMenuItem.Text = "Options"
+        '
+        'SongToolStripMenuItem
+        '
+        Me.SongToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShuffleToolStripMenuItem, Me.RepeatSongToolStripMenuItem})
+        Me.SongToolStripMenuItem.Name = "SongToolStripMenuItem"
+        Me.SongToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.SongToolStripMenuItem.Text = "Songs"
+        '
+        'ShuffleToolStripMenuItem
+        '
+        Me.ShuffleToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShuffleOnToolStripMenuItem, Me.ShuffleOffToolStripMenuItem})
+        Me.ShuffleToolStripMenuItem.Name = "ShuffleToolStripMenuItem"
+        Me.ShuffleToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
+        Me.ShuffleToolStripMenuItem.Text = "Shuffle"
+        '
+        'ShuffleOnToolStripMenuItem
+        '
+        Me.ShuffleOnToolStripMenuItem.Name = "ShuffleOnToolStripMenuItem"
+        Me.ShuffleOnToolStripMenuItem.Size = New System.Drawing.Size(91, 22)
+        Me.ShuffleOnToolStripMenuItem.Text = "On"
+        '
+        'ShuffleOffToolStripMenuItem
+        '
+        Me.ShuffleOffToolStripMenuItem.Name = "ShuffleOffToolStripMenuItem"
+        Me.ShuffleOffToolStripMenuItem.Size = New System.Drawing.Size(91, 22)
+        Me.ShuffleOffToolStripMenuItem.Text = "Off"
+        '
+        'RepeatSongToolStripMenuItem
+        '
+        Me.RepeatSongToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RepeatOnToolStripMenuItem1, Me.RepeatOffToolStripMenuItem1})
+        Me.RepeatSongToolStripMenuItem.Name = "RepeatSongToolStripMenuItem"
+        Me.RepeatSongToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
+        Me.RepeatSongToolStripMenuItem.Text = "Repeat Song"
+        '
+        'RepeatOnToolStripMenuItem1
+        '
+        Me.RepeatOnToolStripMenuItem1.Name = "RepeatOnToolStripMenuItem1"
+        Me.RepeatOnToolStripMenuItem1.Size = New System.Drawing.Size(91, 22)
+        Me.RepeatOnToolStripMenuItem1.Text = "On"
+        '
+        'RepeatOffToolStripMenuItem1
+        '
+        Me.RepeatOffToolStripMenuItem1.Name = "RepeatOffToolStripMenuItem1"
+        Me.RepeatOffToolStripMenuItem1.Size = New System.Drawing.Size(91, 22)
+        Me.RepeatOffToolStripMenuItem1.Text = "Off"
+        '
+        'SearchYouTubeToolStripMenuItem
+        '
+        Me.SearchYouTubeToolStripMenuItem.Name = "SearchYouTubeToolStripMenuItem"
+        Me.SearchYouTubeToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.SearchYouTubeToolStripMenuItem.Text = "Search YouTube"
+        '
+        'CloseToolStripMenuItem
+        '
+        Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.CloseToolStripMenuItem.Text = "Close"
         '
         'PlayToolStripMenuItem
         '
         Me.PlayToolStripMenuItem.Font = New System.Drawing.Font("Webdings", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
-        Me.PlayToolStripMenuItem.Margin = New System.Windows.Forms.Padding(124, 0, 0, 0)
+        Me.PlayToolStripMenuItem.Margin = New System.Windows.Forms.Padding(75, 0, 0, 0)
         Me.PlayToolStripMenuItem.Name = "PlayToolStripMenuItem"
         Me.PlayToolStripMenuItem.Size = New System.Drawing.Size(43, 28)
         Me.PlayToolStripMenuItem.Text = "4"
@@ -158,10 +232,11 @@ Partial Class Form1
         '
         'SeekBar
         '
+        Me.SeekBar.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.SeekBar.ForeColor = System.Drawing.Color.Fuchsia
-        Me.SeekBar.Location = New System.Drawing.Point(34, 87)
+        Me.SeekBar.Location = New System.Drawing.Point(47, 90)
         Me.SeekBar.Name = "SeekBar"
-        Me.SeekBar.Size = New System.Drawing.Size(364, 13)
+        Me.SeekBar.Size = New System.Drawing.Size(348, 17)
         Me.SeekBar.TabIndex = 1
         '
         'SeekTimer
@@ -173,7 +248,7 @@ Partial Class Form1
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(-3, 41)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(451, 293)
+        Me.PictureBox1.Size = New System.Drawing.Size(467, 335)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
@@ -185,9 +260,9 @@ Partial Class Form1
         Me.ListBox2.Font = New System.Drawing.Font("Book Antiqua", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBox2.FormattingEnabled = True
         Me.ListBox2.ItemHeight = 15
-        Me.ListBox2.Location = New System.Drawing.Point(34, 106)
+        Me.ListBox2.Location = New System.Drawing.Point(47, 113)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(364, 122)
+        Me.ListBox2.Size = New System.Drawing.Size(348, 227)
         Me.ListBox2.TabIndex = 5
         '
         'AxWindowsMediaPlayer1
@@ -203,20 +278,24 @@ Partial Class Form1
         'CurrentSeek
         '
         Me.CurrentSeek.AutoSize = True
-        Me.CurrentSeek.Location = New System.Drawing.Point(1, 87)
+        Me.CurrentSeek.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CurrentSeek.Location = New System.Drawing.Point(4, 91)
         Me.CurrentSeek.Name = "CurrentSeek"
-        Me.CurrentSeek.Size = New System.Drawing.Size(28, 13)
+        Me.CurrentSeek.Size = New System.Drawing.Size(37, 16)
         Me.CurrentSeek.TabIndex = 1
         Me.CurrentSeek.Text = "0:00"
+        Me.CurrentSeek.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'TotalLength
         '
         Me.TotalLength.AutoSize = True
-        Me.TotalLength.Location = New System.Drawing.Point(404, 87)
+        Me.TotalLength.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TotalLength.Location = New System.Drawing.Point(399, 91)
         Me.TotalLength.Name = "TotalLength"
-        Me.TotalLength.Size = New System.Drawing.Size(28, 13)
+        Me.TotalLength.Size = New System.Drawing.Size(37, 16)
         Me.TotalLength.TabIndex = 1
         Me.TotalLength.Text = "0:00"
+        Me.TotalLength.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'SongTitle
         '
@@ -242,9 +321,9 @@ Partial Class Form1
         Me.MenuStrip3.BackColor = System.Drawing.Color.Transparent
         Me.MenuStrip3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.MenuStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.PlayListToolStripMenuItem})
-        Me.MenuStrip3.Location = New System.Drawing.Point(0, 244)
+        Me.MenuStrip3.Location = New System.Drawing.Point(0, 347)
         Me.MenuStrip3.Name = "MenuStrip3"
-        Me.MenuStrip3.Size = New System.Drawing.Size(440, 24)
+        Me.MenuStrip3.Size = New System.Drawing.Size(448, 24)
         Me.MenuStrip3.TabIndex = 10
         Me.MenuStrip3.Text = "MenuStrip3"
         '
@@ -284,7 +363,7 @@ Partial Class Form1
         'tbVolume
         '
         Me.tbVolume.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.tbVolume.Location = New System.Drawing.Point(31, 244)
+        Me.tbVolume.Location = New System.Drawing.Point(35, 347)
         Me.tbVolume.Maximum = 100
         Me.tbVolume.Name = "tbVolume"
         Me.tbVolume.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -295,8 +374,8 @@ Partial Class Form1
         'PictureBox2
         '
         Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.PictureBox2.InitialImage = CType(resources.GetObject("PictureBox2.InitialImage"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(123, 244)
+        Me.PictureBox2.InitialImage = Nothing
+        Me.PictureBox2.Location = New System.Drawing.Point(127, 347)
         Me.PictureBox2.MaximumSize = New System.Drawing.Size(20, 20)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(20, 20)
@@ -307,8 +386,8 @@ Partial Class Form1
         'PictureBox3
         '
         Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.PictureBox3.InitialImage = CType(resources.GetObject("PictureBox3.InitialImage"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(6, 244)
+        Me.PictureBox3.InitialImage = Nothing
+        Me.PictureBox3.Location = New System.Drawing.Point(10, 347)
         Me.PictureBox3.MaximumSize = New System.Drawing.Size(20, 20)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(20, 20)
@@ -330,7 +409,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(440, 268)
+        Me.ClientSize = New System.Drawing.Size(448, 371)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.tbVolume)
@@ -393,4 +472,14 @@ Partial Class Form1
     Friend WithEvents EMC2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OrbeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents OptionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SongToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ShuffleToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ShuffleOnToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ShuffleOffToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RepeatSongToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RepeatOnToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RepeatOffToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SearchYouTubeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CloseToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
