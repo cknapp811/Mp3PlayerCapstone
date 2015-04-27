@@ -17,6 +17,7 @@ Public Class Form1
     Dim TrcBarValue As Integer
     Dim PlayPauseInit As Boolean = True
     Dim playstate As Long
+    Dim RandomIndex As New Random
 
     <DllImport("user32.dll")> Public Shared Function SendMessageW(ByVal hWnd As IntPtr, ByVal Msg As Integer, ByVal wParam As IntPtr, ByVal lParam As IntPtr) As IntPtr
     End Function
@@ -26,6 +27,11 @@ Public Class Form1
     End Sub
 
     Private Sub PlayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlayToolStripMenuItem.Click
+        If shuffleButton.ForeColor = Color.Green Then
+                Dim i As Integer = ListBox2.Items.Count
+                Dim SelectedItem As System.Object = ListBox2.Items.Item(RandomIndex.Next(i))
+                ListBox2.SelectedItem = SelectedItem
+        End If
         If PlayPauseInit = True Then
             AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
             SongTitle.Text = AxWindowsMediaPlayer1.currentMedia.name
@@ -74,6 +80,12 @@ Public Class Form1
     End Sub
 
     Private Sub NextToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NextToolStripMenuItem.Click
+        If shuffleButton.ForeColor = Color.Green Then
+            Dim i As Integer = ListBox2.Items.Count
+            Dim songIndex As Integer = ListBox2.SelectedIndex
+            Dim SelectedItem As System.Object = ListBox2.Items.Item(RandomIndex.Next(i))
+            ListBox2.SelectedItem = SelectedItem
+        End If
         If ((Me.ListBox2.Items.Count - 1) <> Me.ListBox2.SelectedIndex) Then
             SeekTimer.Stop()
             Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex + 1
@@ -107,7 +119,13 @@ Public Class Form1
         Else
             SeekTimer.Stop()
             If (Me.ListBox2.Items.Count - 1 <> Me.ListBox2.SelectedIndex) Then
-                Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex + 1
+                If shuffleButton.ForeColor = Color.Green Then
+                    Dim i As Integer = ListBox2.Items.Count
+                    Dim SelectedItem As System.Object = ListBox2.Items.Item(RandomIndex.Next(i))
+                    ListBox2.SelectedItem = SelectedItem
+                Else
+                    Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex + 1
+                End If
                 AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
                 AxWindowsMediaPlayer1.Ctlcontrols.play()
                 SeekMinutes = 0
@@ -125,6 +143,7 @@ Public Class Form1
         SeekBar.Value = 0
         tbVolume.Maximum = 100
         PictureBox1.Image = Nothing
+
     End Sub
 
     Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
@@ -216,6 +235,20 @@ Public Class Form1
 
     Private Sub OrbeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrbeToolStripMenuItem.Click
         PictureBox1.Image = My.Resources.orbe
+    End Sub
+
+    Private Sub shuffleButton_Click(sender As Object, e As EventArgs) Handles shuffleButton.Click
+        If shuffleButton.ForeColor = Color.Red Then
+            shuffleButton.ForeColor = Color.Green
+            shuffleButton.Text = "Shuffle On"
+        ElseIf shuffleButton.ForeColor = Color.Green Then
+            shuffleButton.ForeColor = Color.Red
+            shuffleButton.Text = "Shuffle Off"
+        End If
+
+        
+        'AxWindowsMediaPlayer1.URL = (song.songDir & "\" & ListBox2.SelectedItem)
+        'SeekTimer.Start()
     End Sub
 End Class
 

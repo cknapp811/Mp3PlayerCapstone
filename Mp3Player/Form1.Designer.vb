@@ -56,6 +56,7 @@ Partial Class Form1
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.shuffleButton = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -295,7 +296,7 @@ Partial Class Form1
         'PictureBox2
         '
         Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.PictureBox2.InitialImage = CType(resources.GetObject("PictureBox2.InitialImage"), System.Drawing.Image)
+        Me.PictureBox2.InitialImage = Nothing
         Me.PictureBox2.Location = New System.Drawing.Point(123, 244)
         Me.PictureBox2.MaximumSize = New System.Drawing.Size(20, 20)
         Me.PictureBox2.Name = "PictureBox2"
@@ -307,7 +308,7 @@ Partial Class Form1
         'PictureBox3
         '
         Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.PictureBox3.InitialImage = CType(resources.GetObject("PictureBox3.InitialImage"), System.Drawing.Image)
+        Me.PictureBox3.InitialImage = Nothing
         Me.PictureBox3.Location = New System.Drawing.Point(6, 244)
         Me.PictureBox3.MaximumSize = New System.Drawing.Size(20, 20)
         Me.PictureBox3.Name = "PictureBox3"
@@ -325,12 +326,23 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         '
+        'shuffleButton
+        '
+        Me.shuffleButton.ForeColor = System.Drawing.Color.Red
+        Me.shuffleButton.Location = New System.Drawing.Point(6, 6)
+        Me.shuffleButton.Name = "shuffleButton"
+        Me.shuffleButton.Size = New System.Drawing.Size(78, 23)
+        Me.shuffleButton.TabIndex = 14
+        Me.shuffleButton.Text = "Shuffle"
+        Me.shuffleButton.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(440, 268)
+        Me.Controls.Add(Me.shuffleButton)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.tbVolume)
@@ -393,4 +405,5 @@ Partial Class Form1
     Friend WithEvents EMC2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OrbeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents shuffleButton As System.Windows.Forms.Button
 End Class
