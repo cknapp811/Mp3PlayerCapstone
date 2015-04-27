@@ -41,7 +41,6 @@ Public Class Form1
         SeekTimer.Start()
     End Sub
 
-
     Private Sub PlayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlayToolStripMenuItem.Click
         Try
             If PlayPauseInit = True Then
@@ -63,7 +62,6 @@ Public Class Form1
             End If
         Catch ex As Exception
             MsgBox("ERROR" & vbCrLf & "You must first load a playlist or select a song." & vbCrLf & "Error code: " & ex.Message)
-
         End Try
     End Sub
 
@@ -190,7 +188,6 @@ Public Class Form1
             Dim HasLine As Boolean = True
             oReader = New StreamReader(OpenFileDialog2.FileName, True)
             My.Settings.PlaylistLoad = OpenFileDialog2.FileName
-            MsgBox(OpenFileDialog2.FileName)
             My.Settings.Save()
             While HasLine
                 Dim strReader As String = oReader.ReadLine
