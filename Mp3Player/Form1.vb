@@ -3,10 +3,10 @@ Imports System.IO
 Imports System.Runtime.InteropServices
 
 Public Class Form1
-    Private Const APPCOMMAND_VOLUME_MUTE As Integer = &H80000
-    Private Const APPCOMMAND_VOLUME_UP As Integer = &HA0000
-    Private Const APPCOMMAND_VOLUME_DOWN As Integer = &H90000
-    Private Const WM_APPCOMMAND As Integer = &H319
+    Const WM_APPCOMMAND As UInteger = &H319
+    Const APPCOMMAND_VOLUME_UP As UInteger = &HA
+    Const APPCOMMAND_VOLUME_DOWN As UInteger = &H9
+    Const APPCOMMAND_VOLUME_MUTE As UInteger = &H8
     Dim paths As String()
     Dim fileNames As String()
     Dim song As Song = New Song()
@@ -22,11 +22,17 @@ Public Class Form1
     Dim ShuffleList As Boolean = False
     Dim RepeatSong As Boolean = False
 
-    <DllImport("user32.dll")> Public Shared Function SendMessageW(ByVal hWnd As IntPtr, ByVal Msg As Integer, ByVal wParam As IntPtr, ByVal lParam As IntPtr) As IntPtr
+    <DllImport("user32.dll", SetLastError:=True, CharSet:=CharSet.Auto)> Private Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As UInteger, ByVal wParam As IntPtr, ByVal lParam As IntPtr) As IntPtr
     End Function
 
-    Private Sub tbVolume_ValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles tbVolume.ValueChanged
-        TrcBarValue = tbVolume.Value
+    Private Sub VolUp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VolUp.Click
+        SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_UP * &H10000)
+    End Sub
+    Private Sub VolDown_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VolDown.Click
+        SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_DOWN * &H10000)
+    End Sub
+    Private Sub VolMute_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VolMute.Click
+        SendMessage(Me.Handle, WM_APPCOMMAND, &H200EB0, APPCOMMAND_VOLUME_MUTE * &H10000)
     End Sub
 
     Private Sub Listbox2_DoubleClick(sender As Object, e As EventArgs) Handles ListBox2.DoubleClick
@@ -151,10 +157,7 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SongTitle.Parent = PictureBox1
         SongTitle.BackColor = Color.Transparent
-        SendMessageW(SeekBar.Handle, 1040, (3 * Rnd()), 0)
-        SeekBar.Value = 0
-        tbVolume.Maximum = 100
-        PictureBox1.Image = Nothing
+
         Dim HasLine As Boolean = True
         Dim oReader As StreamReader
         If DirLoad <> Nothing Then
@@ -254,7 +257,6 @@ Public Class Form1
     End Sub
 
     Private Sub resetGUI()
-        SendMessageW(SeekBar.Handle, 1040, (3 * Rnd()), 0)
         SongTitle.Location = New Point(0, SongTitle.Location.Y)
         SeekMinutes = 0
         SeekSeconds = 0
@@ -263,17 +265,6 @@ Public Class Form1
         SeekBar.Value = 0
     End Sub
 
-    Private Sub tbVolume_Scroll(sender As Object, e As EventArgs) Handles tbVolume.Scroll
-        Dim TrcBarDirection As Integer = tbVolume.Value()
-        If tbVolume.Value > TrcBarValue Then
-            For TrcBarDirection = 0 To TrcBarDirection
-                SendMessageW(Me.Handle, WM_APPCOMMAND, Me.Handle, New IntPtr(APPCOMMAND_VOLUME_UP))
-            Next
-        Else : For TrcBarDirection = 0 To TrcBarValue
-                SendMessageW(Me.Handle, WM_APPCOMMAND, Me.Handle, New IntPtr(APPCOMMAND_VOLUME_DOWN))
-            Next
-        End If
-    End Sub
 
     Private Sub NoneToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NoneToolStripMenuItem.Click
         PictureBox1.Image = Nothing
@@ -286,9 +277,8 @@ Public Class Form1
         SongTitle.ForeColor = Color.Black
         MenuStrip1.BackColor = Color.LightGray
         OptionsToolStripMenuItem.BackColor = Color.LightGray
-        PictureBox3.BackColor = Color.LightGray
-        PictureBox2.BackColor = Color.LightGray
-        tbVolume.BackColor = Color.LightGray
+        VolDown.BackColor = Color.LightGray
+        VolUp.BackColor = Color.LightGray
         OpenToolStripMenuItem.BackColor = Color.LightGray
         MenuStrip3.BackColor = Color.LightGray
         PlayListToolStripMenuItem.BackColor = Color.LightGray
@@ -305,9 +295,8 @@ Public Class Form1
         SongTitle.ForeColor = Color.Honeydew
         MenuStrip1.BackColor = Color.DarkGreen
         OptionsToolStripMenuItem.BackColor = Color.DarkGreen
-        PictureBox3.BackColor = Color.DarkGreen
-        PictureBox2.BackColor = Color.DarkGreen
-        tbVolume.BackColor = Color.DarkGreen
+        VolDown.BackColor = Color.DarkGreen
+        VolUp.BackColor = Color.DarkGreen
         OpenToolStripMenuItem.BackColor = Color.DarkGreen
         MenuStrip3.BackColor = Color.DarkGreen
         PlayListToolStripMenuItem.BackColor = Color.DarkGreen
@@ -327,9 +316,8 @@ Public Class Form1
         MenuStrip1.BackColor = Color.DarkGray
         OptionsToolStripMenuItem.BackColor = Color.DarkGray
         SongTitle.ForeColor = Color.GhostWhite
-        PictureBox3.BackColor = Color.DarkGray
-        PictureBox2.BackColor = Color.DarkGray
-        tbVolume.BackColor = Color.DarkGray
+        VolDown.BackColor = Color.DarkGray
+        VolUp.BackColor = Color.DarkGray
         OpenToolStripMenuItem.BackColor = Color.DarkGray
         MenuStrip3.BackColor = Color.DarkGray
         PlayListToolStripMenuItem.BackColor = Color.DarkGray
@@ -346,9 +334,8 @@ Public Class Form1
         OptionsToolStripMenuItem.BackColor = Color.Sienna
         SongTitle.ForeColor = Color.Black
         SongTitle.Image = My.Resources.pikachu_58698
-        PictureBox3.BackColor = Color.Sienna
-        PictureBox2.BackColor = Color.Sienna
-        tbVolume.BackColor = Color.Sienna
+        VolDown.BackColor = Color.Sienna
+        VolUp.BackColor = Color.Sienna
         OpenToolStripMenuItem.BackColor = Color.Sienna
         MenuStrip3.BackColor = Color.Sienna
         PlayListToolStripMenuItem.BackColor = Color.Sienna
@@ -365,9 +352,8 @@ Public Class Form1
         OptionsToolStripMenuItem.BackColor = Color.DarkGray
         SongTitle.ForeColor = Color.LightGray
         SongTitle.Image = Nothing
-        PictureBox3.BackColor = Color.Gray
-        PictureBox2.BackColor = Color.Gray
-        tbVolume.BackColor = Color.Gray
+        VolDown.BackColor = Color.Gray
+        VolUp.BackColor = Color.Gray
         OpenToolStripMenuItem.BackColor = Color.Gray
         MenuStrip3.BackColor = Color.Gray
         PlayListToolStripMenuItem.BackColor = Color.Gray
@@ -428,6 +414,7 @@ Public Class Form1
         Dim url As String = "http://www.youtube.com"
         Process.Start(url)
     End Sub
+
 End Class
 
 

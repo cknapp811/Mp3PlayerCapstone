@@ -151,6 +151,13 @@
   <ItemGroup>
     <None Include="Resources\rasta.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volume-mute.png" />
+    <None Include="Resources\Audio-mute.png" />
+    <None Include="Resources\VolumeDown-512.png" />
+    <Content Include="Resources\VolumeUp-512.png" />
+    <None Include="Resources\volup.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

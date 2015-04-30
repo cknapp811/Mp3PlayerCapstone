@@ -35,6 +35,18 @@ Mp3Player
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Mp3Player.My.Resources.Resources.volume_mute">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Mp3Player.My.Resources.Resources.VolumeDown_512">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Mp3Player.My.Resources.Resources.VolumeUp_512">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="T:Mp3Player.My.Resources.Resources">
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
