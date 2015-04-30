@@ -423,6 +423,11 @@ Public Class Form1
     Private Sub ShuffleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShuffleToolStripMenuItem.Click
 
     End Sub
+
+    Private Sub SearchYouTubeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SearchYouTubeToolStripMenuItem.Click
+        Dim url As String = "http://www.youtube.com"
+        Process.Start(url)
+    End Sub
 End Class
 
 
