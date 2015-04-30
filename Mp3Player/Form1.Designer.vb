@@ -43,19 +43,18 @@ Partial Class Form1
         Me.ThemesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NoneToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EMC2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OrbeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BrickToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IChooseYouToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.SeekBar = New System.Windows.Forms.ProgressBar()
         Me.SeekTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.AxWindowsMediaPlayer1 = New AxWMPLib.AxWindowsMediaPlayer()
         Me.CurrentSeek = New System.Windows.Forms.Label()
         Me.TotalLength = New System.Windows.Forms.Label()
         Me.SongTitle = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.MenuStrip3 = New System.Windows.Forms.MenuStrip()
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlayListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -63,16 +62,16 @@ Partial Class Form1
         Me.SaveListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClearListToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.tbVolume = New System.Windows.Forms.TrackBar()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip3.SuspendLayout()
         CType(Me.tbVolume, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -103,26 +102,26 @@ Partial Class Form1
         '
         Me.ShuffleToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShuffleOnToolStripMenuItem, Me.ShuffleOffToolStripMenuItem})
         Me.ShuffleToolStripMenuItem.Name = "ShuffleToolStripMenuItem"
-        Me.ShuffleToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ShuffleToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
         Me.ShuffleToolStripMenuItem.Text = "Shuffle"
         '
         'ShuffleOnToolStripMenuItem
         '
         Me.ShuffleOnToolStripMenuItem.Name = "ShuffleOnToolStripMenuItem"
-        Me.ShuffleOnToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ShuffleOnToolStripMenuItem.Size = New System.Drawing.Size(91, 22)
         Me.ShuffleOnToolStripMenuItem.Text = "On"
         '
         'ShuffleOffToolStripMenuItem
         '
         Me.ShuffleOffToolStripMenuItem.Name = "ShuffleOffToolStripMenuItem"
-        Me.ShuffleOffToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ShuffleOffToolStripMenuItem.Size = New System.Drawing.Size(91, 22)
         Me.ShuffleOffToolStripMenuItem.Text = "Off"
         '
         'RepeatSongToolStripMenuItem
         '
         Me.RepeatSongToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RepeatOnToolStripMenuItem1, Me.RepeatOffToolStripMenuItem1})
         Me.RepeatSongToolStripMenuItem.Name = "RepeatSongToolStripMenuItem"
-        Me.RepeatSongToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.RepeatSongToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
         Me.RepeatSongToolStripMenuItem.Text = "Repeat Song"
         '
         'RepeatOnToolStripMenuItem1
@@ -189,7 +188,7 @@ Partial Class Form1
         'ThemesToolStripMenuItem
         '
         Me.ThemesToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ThemesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NoneToolStripMenuItem, Me.EMC2ToolStripMenuItem, Me.OrbeToolStripMenuItem})
+        Me.ThemesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NoneToolStripMenuItem, Me.EMC2ToolStripMenuItem, Me.BrickToolStripMenuItem, Me.IChooseYouToolStripMenuItem})
         Me.ThemesToolStripMenuItem.Name = "ThemesToolStripMenuItem"
         Me.ThemesToolStripMenuItem.Size = New System.Drawing.Size(61, 28)
         Me.ThemesToolStripMenuItem.Text = "Themes"
@@ -197,22 +196,29 @@ Partial Class Form1
         'NoneToolStripMenuItem
         '
         Me.NoneToolStripMenuItem.Name = "NoneToolStripMenuItem"
-        Me.NoneToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
+        Me.NoneToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
         Me.NoneToolStripMenuItem.Text = "None"
         '
         'EMC2ToolStripMenuItem
         '
         Me.EMC2ToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.EMC2
         Me.EMC2ToolStripMenuItem.Name = "EMC2ToolStripMenuItem"
-        Me.EMC2ToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
+        Me.EMC2ToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
         Me.EMC2ToolStripMenuItem.Text = "E=MC2"
         '
-        'OrbeToolStripMenuItem
+        'BrickToolStripMenuItem
         '
-        Me.OrbeToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.orbe
-        Me.OrbeToolStripMenuItem.Name = "OrbeToolStripMenuItem"
-        Me.OrbeToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
-        Me.OrbeToolStripMenuItem.Text = "Orbe"
+        Me.BrickToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.brickWall
+        Me.BrickToolStripMenuItem.Name = "BrickToolStripMenuItem"
+        Me.BrickToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.BrickToolStripMenuItem.Text = "Another Brick in the wall"
+        '
+        'IChooseYouToolStripMenuItem
+        '
+        Me.IChooseYouToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.pikachu_58698
+        Me.IChooseYouToolStripMenuItem.Name = "IChooseYouToolStripMenuItem"
+        Me.IChooseYouToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.IChooseYouToolStripMenuItem.Text = "I Choose You!"
         '
         'ToolStripMenuItem2
         '
@@ -234,7 +240,7 @@ Partial Class Form1
         '
         Me.SeekBar.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.SeekBar.ForeColor = System.Drawing.Color.Fuchsia
-        Me.SeekBar.Location = New System.Drawing.Point(47, 90)
+        Me.SeekBar.Location = New System.Drawing.Point(47, 91)
         Me.SeekBar.Name = "SeekBar"
         Me.SeekBar.Size = New System.Drawing.Size(348, 17)
         Me.SeekBar.TabIndex = 1
@@ -243,26 +249,16 @@ Partial Class Form1
         '
         Me.SeekTimer.Interval = 1000
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(-3, 41)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(467, 335)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
-        '
         'ListBox2
         '
-        Me.ListBox2.BackColor = System.Drawing.SystemColors.Control
+        Me.ListBox2.BackColor = System.Drawing.Color.White
         Me.ListBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ListBox2.Font = New System.Drawing.Font("Book Antiqua", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListBox2.Font = New System.Drawing.Font("Lucida Console", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.ItemHeight = 15
-        Me.ListBox2.Location = New System.Drawing.Point(47, 113)
+        Me.ListBox2.ItemHeight = 16
+        Me.ListBox2.Location = New System.Drawing.Point(47, 114)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(348, 227)
+        Me.ListBox2.Size = New System.Drawing.Size(348, 226)
         Me.ListBox2.TabIndex = 5
         '
         'AxWindowsMediaPlayer1
@@ -299,22 +295,16 @@ Partial Class Form1
         '
         'SongTitle
         '
-        Me.SongTitle.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SongTitle.Location = New System.Drawing.Point(-3, 43)
+        Me.SongTitle.Font = New System.Drawing.Font("Lucida Console", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SongTitle.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.SongTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.SongTitle.Location = New System.Drawing.Point(-3, 32)
         Me.SongTitle.Name = "SongTitle"
         Me.SongTitle.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
-        Me.SongTitle.Size = New System.Drawing.Size(453, 31)
+        Me.SongTitle.Size = New System.Drawing.Size(453, 56)
         Me.SongTitle.TabIndex = 6
         Me.SongTitle.Text = "Song Title"
         Me.SongTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Location = New System.Drawing.Point(-24, 74)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(474, 10)
-        Me.GroupBox2.TabIndex = 8
-        Me.GroupBox2.TabStop = False
         '
         'MenuStrip3
         '
@@ -371,18 +361,6 @@ Partial Class Form1
         Me.tbVolume.TabIndex = 11
         Me.tbVolume.TickFrequency = 10
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.PictureBox2.InitialImage = Nothing
-        Me.PictureBox2.Location = New System.Drawing.Point(127, 347)
-        Me.PictureBox2.MaximumSize = New System.Drawing.Size(20, 20)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(20, 20)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 12
-        Me.PictureBox2.TabStop = False
-        '
         'PictureBox3
         '
         Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
@@ -395,14 +373,26 @@ Partial Class Form1
         Me.PictureBox3.TabIndex = 13
         Me.PictureBox3.TabStop = False
         '
-        'GroupBox1
+        'PictureBox2
         '
-        Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.GroupBox1.Location = New System.Drawing.Point(-8, 35)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(458, 10)
-        Me.GroupBox1.TabIndex = 7
-        Me.GroupBox1.TabStop = False
+        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.PictureBox2.InitialImage = Nothing
+        Me.PictureBox2.Location = New System.Drawing.Point(127, 347)
+        Me.PictureBox2.MaximumSize = New System.Drawing.Size(20, 20)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(20, 20)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 12
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(-3, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(467, 376)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
         '
         'Form1
         '
@@ -414,8 +404,6 @@ Partial Class Form1
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.tbVolume)
         Me.Controls.Add(Me.MenuStrip3)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.SongTitle)
         Me.Controls.Add(Me.TotalLength)
         Me.Controls.Add(Me.CurrentSeek)
@@ -429,13 +417,13 @@ Partial Class Form1
         Me.Text = "Mp3 Player"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip3.ResumeLayout(False)
         Me.MenuStrip3.PerformLayout()
         CType(Me.tbVolume, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -455,7 +443,6 @@ Partial Class Form1
     Friend WithEvents CurrentSeek As System.Windows.Forms.Label
     Friend WithEvents TotalLength As System.Windows.Forms.Label
     Friend WithEvents SongTitle As System.Windows.Forms.Label
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MenuStrip3 As System.Windows.Forms.MenuStrip
     Friend WithEvents OpenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -470,8 +457,7 @@ Partial Class Form1
     Friend WithEvents ThemesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NoneToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EMC2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents OrbeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents BrickToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OptionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SongToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ShuffleToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -482,4 +468,5 @@ Partial Class Form1
     Friend WithEvents RepeatOffToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SearchYouTubeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CloseToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents IChooseYouToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

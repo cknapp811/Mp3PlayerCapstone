@@ -149,6 +149,8 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SongTitle.Parent = PictureBox1
+        SongTitle.BackColor = Color.Transparent
         SendMessageW(SeekBar.Handle, 1040, (3 * Rnd()), 0)
         SeekBar.Value = 0
         tbVolume.Maximum = 100
@@ -275,14 +277,26 @@ Public Class Form1
 
     Private Sub NoneToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NoneToolStripMenuItem.Click
         PictureBox1.Image = Nothing
+        SongTitle.ForeColor = Color.Black
     End Sub
 
     Private Sub EMC2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EMC2ToolStripMenuItem.Click
         PictureBox1.Image = My.Resources.EMC2
+        SongTitle.ForeColor = Color.Honeydew
+
     End Sub
 
-    Private Sub OrbeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrbeToolStripMenuItem.Click
-        PictureBox1.Image = My.Resources.orbe
+    Private Sub BrickToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BrickToolStripMenuItem.Click
+        PictureBox1.Image = My.Resources.brickWall
+        MenuStrip1.BackColor = Color.DarkGray
+        OptionsToolStripMenuItem.BackColor = Color.DarkGray
+        SongTitle.ForeColor = Color.GhostWhite
+        PictureBox3.BackColor = Color.DarkGray
+        PictureBox2.BackColor = Color.DarkGray
+        tbVolume.BackColor = Color.DarkGray
+        OpenToolStripMenuItem.BackColor = Color.DarkGray
+        MenuStrip3.BackColor = Color.DarkGray
+        PlayListToolStripMenuItem.BackColor = Color.DarkGray
     End Sub
 
     Private Sub ShuffleOnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShuffleOnToolStripMenuItem.Click
@@ -336,6 +350,22 @@ Public Class Form1
     Private Sub ShuffleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShuffleToolStripMenuItem.Click
 
     End Sub
+
+    Private Sub IChooseYouToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IChooseYouToolStripMenuItem.Click
+        PictureBox1.BackColor = Color.Yellow
+        MenuStrip1.BackColor = Color.Sienna
+        OptionsToolStripMenuItem.BackColor = Color.DarkGray
+        SongTitle.ForeColor = Color.Black
+        SongTitle.Image = My.Resources.pikachu_58698
+        PictureBox3.BackColor = Color.Sienna
+        PictureBox2.BackColor = Color.Sienna
+        tbVolume.BackColor = Color.Sienna
+        OpenToolStripMenuItem.BackColor = Color.Sienna
+        MenuStrip3.BackColor = Color.Sienna
+        PlayListToolStripMenuItem.BackColor = Color.Sienna
+    End Sub
+
+ 
 End Class
 
 
