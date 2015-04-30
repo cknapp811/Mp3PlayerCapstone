@@ -354,7 +354,7 @@ Public Class Form1
     Private Sub IChooseYouToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IChooseYouToolStripMenuItem.Click
         PictureBox1.BackColor = Color.Yellow
         MenuStrip1.BackColor = Color.Sienna
-        OptionsToolStripMenuItem.BackColor = Color.DarkGray
+        OptionsToolStripMenuItem.BackColor = Color.Sienna
         SongTitle.ForeColor = Color.Black
         SongTitle.Image = My.Resources.pikachu_58698
         PictureBox3.BackColor = Color.Sienna
