@@ -103,26 +103,26 @@ Partial Class Form1
         '
         Me.ShuffleToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShuffleOnToolStripMenuItem, Me.ShuffleOffToolStripMenuItem})
         Me.ShuffleToolStripMenuItem.Name = "ShuffleToolStripMenuItem"
-        Me.ShuffleToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
+        Me.ShuffleToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ShuffleToolStripMenuItem.Text = "Shuffle"
         '
         'ShuffleOnToolStripMenuItem
         '
         Me.ShuffleOnToolStripMenuItem.Name = "ShuffleOnToolStripMenuItem"
-        Me.ShuffleOnToolStripMenuItem.Size = New System.Drawing.Size(91, 22)
+        Me.ShuffleOnToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ShuffleOnToolStripMenuItem.Text = "On"
         '
         'ShuffleOffToolStripMenuItem
         '
         Me.ShuffleOffToolStripMenuItem.Name = "ShuffleOffToolStripMenuItem"
-        Me.ShuffleOffToolStripMenuItem.Size = New System.Drawing.Size(91, 22)
+        Me.ShuffleOffToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ShuffleOffToolStripMenuItem.Text = "Off"
         '
         'RepeatSongToolStripMenuItem
         '
         Me.RepeatSongToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RepeatOnToolStripMenuItem1, Me.RepeatOffToolStripMenuItem1})
         Me.RepeatSongToolStripMenuItem.Name = "RepeatSongToolStripMenuItem"
-        Me.RepeatSongToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
+        Me.RepeatSongToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.RepeatSongToolStripMenuItem.Text = "Repeat Song"
         '
         'RepeatOnToolStripMenuItem1
@@ -197,21 +197,21 @@ Partial Class Form1
         'NoneToolStripMenuItem
         '
         Me.NoneToolStripMenuItem.Name = "NoneToolStripMenuItem"
-        Me.NoneToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NoneToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
         Me.NoneToolStripMenuItem.Text = "None"
         '
         'EMC2ToolStripMenuItem
         '
         Me.EMC2ToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.EMC2
         Me.EMC2ToolStripMenuItem.Name = "EMC2ToolStripMenuItem"
-        Me.EMC2ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EMC2ToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
         Me.EMC2ToolStripMenuItem.Text = "E=MC2"
         '
         'OrbeToolStripMenuItem
         '
         Me.OrbeToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.orbe
         Me.OrbeToolStripMenuItem.Name = "OrbeToolStripMenuItem"
-        Me.OrbeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.OrbeToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
         Me.OrbeToolStripMenuItem.Text = "Orbe"
         '
         'ToolStripMenuItem2

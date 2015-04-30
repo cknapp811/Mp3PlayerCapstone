@@ -88,6 +88,13 @@ Public Class Form1
     End Sub
 
     Private Sub NextToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NextToolStripMenuItem.Click
+        If ShuffleList = True Then
+            Dim i As Integer = ListBox2.Items.Count
+            Dim songIndex As Integer = ListBox2.SelectedIndex
+            Dim SelectedItem As System.Object = ListBox2.Items.Item(RandomIndex.Next(i))
+            ListBox2.SelectedItem = SelectedItem
+        End If
+
         If ((Me.ListBox2.Items.Count - 1) <> Me.ListBox2.SelectedIndex) Then
             SeekTimer.Stop()
             Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex + 1
@@ -279,6 +286,7 @@ Public Class Form1
     End Sub
 
     Private Sub ShuffleOnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShuffleOnToolStripMenuItem.Click
+
         ShuffleList = True
         RepeatSong = False
         InitSongOptionsSelected()
@@ -323,6 +331,10 @@ Public Class Form1
 
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
         Me.Close()
+    End Sub
+
+    Private Sub ShuffleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShuffleToolStripMenuItem.Click
+
     End Sub
 End Class
 
