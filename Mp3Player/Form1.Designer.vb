@@ -333,7 +333,8 @@ Partial Class Form1
         'VolMute
         '
         Me.VolMute.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.VolMute.Image = Global.Mp3Player.My.Resources.Resources.volume_mute
+        Me.VolMute.BackColor = System.Drawing.SystemColors.Control
+        Me.VolMute.Image = Global.Mp3Player.My.Resources.Resources._535141_novoice_512x512
         Me.VolMute.InitialImage = Nothing
         Me.VolMute.Location = New System.Drawing.Point(10, 347)
         Me.VolMute.MaximumSize = New System.Drawing.Size(20, 20)

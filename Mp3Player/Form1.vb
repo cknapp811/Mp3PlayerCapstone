@@ -279,6 +279,7 @@ Public Class Form1
         OptionsToolStripMenuItem.BackColor = Color.LightGray
         VolDown.BackColor = Color.LightGray
         VolUp.BackColor = Color.LightGray
+        VolMute.BackColor = Color.LightGray
         OpenToolStripMenuItem.BackColor = Color.LightGray
         MenuStrip3.BackColor = Color.LightGray
         PlayListToolStripMenuItem.BackColor = Color.LightGray
@@ -297,6 +298,7 @@ Public Class Form1
         OptionsToolStripMenuItem.BackColor = Color.DarkGreen
         VolDown.BackColor = Color.DarkGreen
         VolUp.BackColor = Color.DarkGreen
+        VolMute.BackColor = Color.DarkGreen
         OpenToolStripMenuItem.BackColor = Color.DarkGreen
         MenuStrip3.BackColor = Color.DarkGreen
         PlayListToolStripMenuItem.BackColor = Color.DarkGreen
@@ -318,6 +320,7 @@ Public Class Form1
         SongTitle.ForeColor = Color.GhostWhite
         VolDown.BackColor = Color.DarkGray
         VolUp.BackColor = Color.DarkGray
+        VolMute.BackColor = Color.DarkGray
         OpenToolStripMenuItem.BackColor = Color.DarkGray
         MenuStrip3.BackColor = Color.DarkGray
         PlayListToolStripMenuItem.BackColor = Color.DarkGray
@@ -336,6 +339,7 @@ Public Class Form1
         SongTitle.Image = My.Resources.pikachu_58698
         VolDown.BackColor = Color.Sienna
         VolUp.BackColor = Color.Sienna
+        VolMute.BackColor = Color.Sienna
         OpenToolStripMenuItem.BackColor = Color.Sienna
         MenuStrip3.BackColor = Color.Sienna
         PlayListToolStripMenuItem.BackColor = Color.Sienna
@@ -354,6 +358,7 @@ Public Class Form1
         SongTitle.Image = Nothing
         VolDown.BackColor = Color.Gray
         VolUp.BackColor = Color.Gray
+        VolMute.BackColor = Color.Gray
         OpenToolStripMenuItem.BackColor = Color.Gray
         MenuStrip3.BackColor = Color.Gray
         PlayListToolStripMenuItem.BackColor = Color.Gray
@@ -411,7 +416,7 @@ Public Class Form1
     End Sub
 
     Private Sub SearchYouTubeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SearchYouTubeToolStripMenuItem.Click
-        Dim url As String = "http://www.youtube.com"
+        Dim url As String = "https://www.youtube.com/results?q=" + SongTitle.Text
         Process.Start(url)
     End Sub
 

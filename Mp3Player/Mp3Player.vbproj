@@ -152,6 +152,8 @@
     <None Include="Resources\rasta.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\535141-novoice_512x512.png" />
+    <None Include="Resources\device_volume_loudspeaker_speaker_mute_-512.png" />
     <None Include="Resources\volume-mute.png" />
     <None Include="Resources\Audio-mute.png" />
     <None Include="Resources\VolumeDown-512.png" />
