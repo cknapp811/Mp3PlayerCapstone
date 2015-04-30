@@ -353,6 +353,25 @@ Public Class Form1
         MenuStrip3.BackColor = Color.Sienna
         PlayListToolStripMenuItem.BackColor = Color.Sienna
     End Sub
+    Private Sub WeBeJamminToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WeBeJamminToolStripMenuItem.Click
+        PictureBox1.BackColor = Color.Maroon
+        PictureBox1.Image = My.Resources.rasta
+        CurrentSeek.BackColor = PictureBox1.BackColor
+        TotalLength.BackColor = PictureBox1.BackColor
+        CurrentSeek.ForeColor = Color.Gray
+        TotalLength.ForeColor = Color.Gray
+        Me.BackColor = Color.Maroon
+        MenuStrip1.BackColor = Color.DarkGray
+        OptionsToolStripMenuItem.BackColor = Color.DarkGray
+        SongTitle.ForeColor = Color.LightGray
+        SongTitle.Image = Nothing
+        PictureBox3.BackColor = Color.Gray
+        PictureBox2.BackColor = Color.Gray
+        tbVolume.BackColor = Color.Gray
+        OpenToolStripMenuItem.BackColor = Color.Gray
+        MenuStrip3.BackColor = Color.Gray
+        PlayListToolStripMenuItem.BackColor = Color.Gray
+    End Sub
     Private Sub ShuffleOnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShuffleOnToolStripMenuItem.Click
 
         ShuffleList = True
@@ -404,10 +423,6 @@ Public Class Form1
     Private Sub ShuffleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShuffleToolStripMenuItem.Click
 
     End Sub
-
-
-
- 
 End Class
 
 
