@@ -27,9 +27,17 @@ Public Class Form1
 
     Private Sub VolUp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VolUp.Click
         SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_UP * &H10000)
+        SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_UP * &H10000)
+        SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_UP * &H10000)
+        SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_UP * &H10000)
+        SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_UP * &H10000)
     End Sub
 
     Private Sub VolDown_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VolDown.Click
+        SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_DOWN * &H10000)
+        SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_DOWN * &H10000)
+        SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_DOWN * &H10000)
+        SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_DOWN * &H10000)
         SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_DOWN * &H10000)
     End Sub
 
@@ -102,7 +110,6 @@ Public Class Form1
             Dim SelectedItem As System.Object = ListBox2.Items.Item(RandomIndex.Next(i))
             ListBox2.SelectedItem = SelectedItem
         End If
-
         If ((Me.ListBox2.Items.Count - 1) <> Me.ListBox2.SelectedIndex) Then
             SeekTimer.Stop()
             Me.ListBox2.SelectedIndex = Me.ListBox2.SelectedIndex + 1
@@ -153,8 +160,8 @@ Public Class Form1
                 SeekTimer.Start()
             End If
         End If
-        If SongTitle.Location.X >= (Me.Width * 1.5 - SongTitle.Location.X) Then
-            SongTitle.Location = New Point(SongTitle.Location.X - Me.Width * 1.5, SongTitle.Location.Y)
+        If SongTitle.Location.X >= (Me.Width * 1.75 - SongTitle.Location.X) Then
+            SongTitle.Location = New Point(SongTitle.Location.X - Me.Width * 1.75, SongTitle.Location.Y)
         Else
             SongTitle.Location = New Point(SongTitle.Location.X + 15, SongTitle.Location.Y)
         End If
@@ -316,7 +323,6 @@ Public Class Form1
         OpenToolStripMenuItem.BackColor = Color.DarkGreen
         MenuStrip3.BackColor = Color.DarkGreen
         PlayListToolStripMenuItem.BackColor = Color.DarkGreen
-
     End Sub
 
     Private Sub BrickToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BrickToolStripMenuItem.Click
@@ -428,7 +434,7 @@ Public Class Form1
     End Sub
 
     Private Sub SearchYouTubeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SearchYouTubeToolStripMenuItem.Click
-        If ListBox2.SelectedIndex Then
+        If ListBox2.SelectedIndex >= 0 Then
             Dim url As String = "https://www.youtube.com/results?search_query=" + ListBox2.SelectedItem.split(".")(0) + "+" + "Official"
             Process.Start(url)
         Else : MsgBox("Please Select A Song To Search!")
