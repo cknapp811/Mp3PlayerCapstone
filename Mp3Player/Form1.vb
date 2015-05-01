@@ -120,9 +120,13 @@ Public Class Form1
                 SeekMinutes = SeekMinutes + 1
                 SeekSeconds = "00"
             End If
-            If SeekSeconds < 9 Then
+            If SeekSeconds <= 9 Then
                 SeekSeconds = ("0" & SeekSeconds + 1)
             Else : SeekSeconds = SeekSeconds + 1
+            End If
+            If TotalSeconds <= 9 Then
+                TotalSeconds = ("0" & TotalSeconds)
+            Else : TotalSeconds = TotalSeconds
             End If
             CurrentSeek.Text = SeekMinutes & ":" & SeekSeconds
             TotalSeconds = Math.Floor((AxWindowsMediaPlayer1.currentMedia.duration) Mod 60)
@@ -157,10 +161,9 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SongTitle.Parent = PictureBox1
         SongTitle.BackColor = Color.Transparent
-
         Dim HasLine As Boolean = True
         Dim oReader As StreamReader
-        If DirLoad <> Nothing Then
+        If My.Computer.FileSystem.FileExists(DirLoad) Then
             oReader = New StreamReader(DirLoad, True)
             While HasLine
                 Dim strReader As String = oReader.ReadLine
@@ -173,6 +176,7 @@ Public Class Form1
                 End If
             End While
             ListBox2.SelectedIndex = 0
+        Else : MsgBox("Error: The playlist does not exists!" & vbCrLf & "Are you sure it wasnt moved or deleted?")
         End If
         InitSongOptionsSelected()
         FormBorderStyle = Windows.Forms.FormBorderStyle.FixedSingle
@@ -325,6 +329,7 @@ Public Class Form1
         MenuStrip3.BackColor = Color.DarkGray
         PlayListToolStripMenuItem.BackColor = Color.DarkGray
     End Sub
+
     Private Sub IChooseYouToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IChooseYouToolStripMenuItem.Click
         PictureBox1.BackColor = Color.Yellow
         PictureBox1.Image = Nothing
@@ -344,6 +349,7 @@ Public Class Form1
         MenuStrip3.BackColor = Color.Sienna
         PlayListToolStripMenuItem.BackColor = Color.Sienna
     End Sub
+
     Private Sub WeBeJamminToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WeBeJamminToolStripMenuItem.Click
         PictureBox1.BackColor = Color.Maroon
         PictureBox1.Image = My.Resources.rasta
@@ -363,8 +369,8 @@ Public Class Form1
         MenuStrip3.BackColor = Color.Gray
         PlayListToolStripMenuItem.BackColor = Color.Gray
     End Sub
-    Private Sub ShuffleOnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShuffleOnToolStripMenuItem.Click
 
+    Private Sub ShuffleOnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShuffleOnToolStripMenuItem.Click
         ShuffleList = True
         RepeatSong = False
         InitSongOptionsSelected()
@@ -411,13 +417,12 @@ Public Class Form1
         Me.Close()
     End Sub
 
-    Private Sub ShuffleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShuffleToolStripMenuItem.Click
-
-    End Sub
-
     Private Sub SearchYouTubeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SearchYouTubeToolStripMenuItem.Click
-        Dim url As String = "https://www.youtube.com/results?q=" + SongTitle.Text
-        Process.Start(url)
+        If ListBox2.SelectedIndex Then
+            Dim url As String = "https://www.youtube.com/results?search_query=" + ListBox2.SelectedItem.split(".")(0) + "+" + "Official"
+            Process.Start(url)
+        Else : MsgBox("Please Select A Song To Search!")
+        End If
     End Sub
 
 End Class

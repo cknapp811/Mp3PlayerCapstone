@@ -42,6 +42,10 @@ Partial Class Form1
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ThemesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NoneToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EMC2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BrickToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IChooseYouToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.WeBeJamminToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
@@ -61,10 +65,6 @@ Partial Class Form1
         Me.VolMute = New System.Windows.Forms.PictureBox()
         Me.VolDown = New System.Windows.Forms.PictureBox()
         Me.VolUp = New System.Windows.Forms.PictureBox()
-        Me.EMC2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BrickToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.IChooseYouToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WeBeJamminToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -200,6 +200,34 @@ Partial Class Form1
         Me.NoneToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
         Me.NoneToolStripMenuItem.Text = "None"
         '
+        'EMC2ToolStripMenuItem
+        '
+        Me.EMC2ToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.EMC2
+        Me.EMC2ToolStripMenuItem.Name = "EMC2ToolStripMenuItem"
+        Me.EMC2ToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.EMC2ToolStripMenuItem.Text = "E=MC2"
+        '
+        'BrickToolStripMenuItem
+        '
+        Me.BrickToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.brickWall
+        Me.BrickToolStripMenuItem.Name = "BrickToolStripMenuItem"
+        Me.BrickToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.BrickToolStripMenuItem.Text = "Another Brick in the wall"
+        '
+        'IChooseYouToolStripMenuItem
+        '
+        Me.IChooseYouToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.pikachu_58698
+        Me.IChooseYouToolStripMenuItem.Name = "IChooseYouToolStripMenuItem"
+        Me.IChooseYouToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.IChooseYouToolStripMenuItem.Text = "I Choose You!"
+        '
+        'WeBeJamminToolStripMenuItem
+        '
+        Me.WeBeJamminToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.rasta
+        Me.WeBeJamminToolStripMenuItem.Name = "WeBeJamminToolStripMenuItem"
+        Me.WeBeJamminToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.WeBeJamminToolStripMenuItem.Text = "We Be Jammin"
+        '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
@@ -233,7 +261,7 @@ Partial Class Form1
         '
         Me.ListBox2.BackColor = System.Drawing.Color.White
         Me.ListBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ListBox2.Font = New System.Drawing.Font("Lucida Console", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListBox2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBox2.FormattingEnabled = True
         Me.ListBox2.ItemHeight = 16
         Me.ListBox2.Location = New System.Drawing.Point(47, 114)
@@ -275,8 +303,8 @@ Partial Class Form1
         '
         'SongTitle
         '
-        Me.SongTitle.Font = New System.Drawing.Font("Lucida Console", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SongTitle.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.SongTitle.Font = New System.Drawing.Font("Arial Rounded MT Bold", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SongTitle.ForeColor = System.Drawing.Color.Black
         Me.SongTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.SongTitle.Location = New System.Drawing.Point(-3, 32)
         Me.SongTitle.Name = "SongTitle"
@@ -369,34 +397,6 @@ Partial Class Form1
         Me.VolUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.VolUp.TabIndex = 12
         Me.VolUp.TabStop = False
-        '
-        'EMC2ToolStripMenuItem
-        '
-        Me.EMC2ToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.EMC2
-        Me.EMC2ToolStripMenuItem.Name = "EMC2ToolStripMenuItem"
-        Me.EMC2ToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
-        Me.EMC2ToolStripMenuItem.Text = "E=MC2"
-        '
-        'BrickToolStripMenuItem
-        '
-        Me.BrickToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.brickWall
-        Me.BrickToolStripMenuItem.Name = "BrickToolStripMenuItem"
-        Me.BrickToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
-        Me.BrickToolStripMenuItem.Text = "Another Brick in the wall"
-        '
-        'IChooseYouToolStripMenuItem
-        '
-        Me.IChooseYouToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.pikachu_58698
-        Me.IChooseYouToolStripMenuItem.Name = "IChooseYouToolStripMenuItem"
-        Me.IChooseYouToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
-        Me.IChooseYouToolStripMenuItem.Text = "I Choose You!"
-        '
-        'WeBeJamminToolStripMenuItem
-        '
-        Me.WeBeJamminToolStripMenuItem.Image = Global.Mp3Player.My.Resources.Resources.rasta
-        Me.WeBeJamminToolStripMenuItem.Name = "WeBeJamminToolStripMenuItem"
-        Me.WeBeJamminToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
-        Me.WeBeJamminToolStripMenuItem.Text = "We Be Jammin"
         '
         'PictureBox1
         '
