@@ -122,16 +122,16 @@ Public Class Form1
                 SeekMinutes = SeekMinutes + 1
                 SeekSeconds = "00"
             End If
-            If SeekSeconds <= 9 Then
+            If SeekSeconds < 9 Then
                 SeekSeconds = ("0" & SeekSeconds + 1)
             Else : SeekSeconds = SeekSeconds + 1
             End If
-            If TotalSeconds <= 9 Then
+            CurrentSeek.Text = SeekMinutes & ":" & SeekSeconds
+            TotalSeconds = Math.Floor((AxWindowsMediaPlayer1.currentMedia.duration) Mod 60)
+            If TotalSeconds < 9 Then
                 TotalSeconds = ("0" & TotalSeconds)
             Else : TotalSeconds = TotalSeconds
             End If
-            CurrentSeek.Text = SeekMinutes & ":" & SeekSeconds
-            TotalSeconds = Math.Floor((AxWindowsMediaPlayer1.currentMedia.duration) Mod 60)
             TotalLength.Text = Math.Floor((AxWindowsMediaPlayer1.currentMedia.duration) / 60) & ":" & TotalSeconds
         Else
             SeekTimer.Stop()
@@ -163,6 +163,9 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SongTitle.Parent = PictureBox1
         SongTitle.BackColor = Color.Transparent
+        SendMessage(SeekBar.Handle, 1040, (3 * Rnd()), 0)
+        SeekBar.Value = 0
+        PictureBox1.Image = Nothing
         Dim HasLine As Boolean = True
         Dim oReader As StreamReader
         If My.Computer.FileSystem.FileExists(DirLoad) Then
@@ -267,6 +270,7 @@ Public Class Form1
     End Sub
 
     Private Sub resetGUI()
+        SendMessage(SeekBar.Handle, 1040, (3 * Rnd()), 0)
         SongTitle.Location = New Point(0, SongTitle.Location.Y)
         SeekMinutes = 0
         SeekSeconds = 0
