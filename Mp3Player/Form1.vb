@@ -28,9 +28,11 @@ Public Class Form1
     Private Sub VolUp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VolUp.Click
         SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_UP * &H10000)
     End Sub
+
     Private Sub VolDown_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VolDown.Click
         SendMessage(Me.Handle, WM_APPCOMMAND, &H30292, APPCOMMAND_VOLUME_DOWN * &H10000)
     End Sub
+
     Private Sub VolMute_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VolMute.Click
         SendMessage(Me.Handle, WM_APPCOMMAND, &H200EB0, APPCOMMAND_VOLUME_MUTE * &H10000)
     End Sub
@@ -176,7 +178,11 @@ Public Class Form1
                 End If
             End While
             ListBox2.SelectedIndex = 0
-        Else : MsgBox("Error: The playlist does not exists!" & vbCrLf & "Are you sure it wasnt moved or deleted?")
+        Else
+            If DirLoad = Nothing Then
+                MsgBox("Welcome!" & vbCrLf & "Please Add Songs and Save a Playlist!!")
+            Else : MsgBox("Error: The playlist does not exists!" & vbCrLf & "Are you sure it wasnt moved or deleted?" & vbCrLf & "Attempting Fetch: " & DirLoad)
+            End If
         End If
         InitSongOptionsSelected()
         FormBorderStyle = Windows.Forms.FormBorderStyle.FixedSingle
