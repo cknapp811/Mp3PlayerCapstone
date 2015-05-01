@@ -118,31 +118,34 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="orbe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\orbe.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="VolumeUp_512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\volumeup-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="brickWall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brickWall.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EMC2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EMC2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="orbe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orbe.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pikachu_58698" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pikachu_58698.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rasta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rasta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="VolumeUp_512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\volumeup-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="VolumeDown_512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VolumeDown-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_535141_novoice_512x512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\535141-novoice_512x512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="volume_mute" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\volume-mute.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_535141_novoice_512x512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\535141-novoice_512x512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EMC2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EMC2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rasta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rasta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pikachu_58698" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pikachu_58698.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VolumeDown_512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VolumeDown-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kitty2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kitty2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

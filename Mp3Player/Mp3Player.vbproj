@@ -157,6 +157,7 @@
     <None Include="Resources\volume-mute.png" />
     <None Include="Resources\Audio-mute.png" />
     <None Include="Resources\VolumeDown-512.png" />
+    <None Include="Resources\kitty2.png" />
     <Content Include="Resources\VolumeUp-512.png" />
     <None Include="Resources\volup.bmp" />
   </ItemGroup>

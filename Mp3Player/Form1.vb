@@ -385,7 +385,25 @@ Public Class Form1
         MenuStrip3.BackColor = Color.Gray
         PlayListToolStripMenuItem.BackColor = Color.Gray
     End Sub
-
+    Private Sub HelloKittyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelloKittyToolStripMenuItem.Click
+        PictureBox1.BackColor = Color.White
+        PictureBox1.Image = Nothing
+        CurrentSeek.BackColor = PictureBox1.BackColor
+        TotalLength.BackColor = PictureBox1.BackColor
+        CurrentSeek.ForeColor = Color.HotPink
+        TotalLength.ForeColor = Color.HotPink
+        Me.BackColor = Color.White
+        MenuStrip1.BackColor = Color.HotPink
+        OptionsToolStripMenuItem.BackColor = Color.HotPink
+        SongTitle.ForeColor = Color.Black
+        SongTitle.Image = My.Resources.kitty2
+        VolDown.BackColor = Color.HotPink
+        VolUp.BackColor = Color.HotPink
+        VolMute.BackColor = Color.HotPink
+        OpenToolStripMenuItem.BackColor = Color.HotPink
+        MenuStrip3.BackColor = Color.HotPink
+        PlayListToolStripMenuItem.BackColor = Color.HotPink
+    End Sub
     Private Sub ShuffleOnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShuffleOnToolStripMenuItem.Click
         ShuffleList = True
         RepeatSong = False
@@ -440,6 +458,7 @@ Public Class Form1
         Else : MsgBox("Please Select A Song To Search!")
         End If
     End Sub
+
 
 End Class
 
